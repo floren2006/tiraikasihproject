@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - TIRAI KASIH NTT</title>
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(0, 102, 179, 0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(255, 193, 7, 0.10),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #f5f9fd 0%,
+                    #eaf3fa 100%
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            color: #173b5f;
+        }
+
+
+        /* =====================================================
+           BACKGROUND DECORATION
+        ===================================================== */
+
+        .background-circle {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+        .circle-one {
+            width: 360px;
+            height: 360px;
+
+            top: -160px;
+            left: -120px;
+
+            background: rgba(0, 102, 179, 0.06);
+        }
+
+        .circle-two {
+            width: 280px;
+            height: 280px;
+
+            right: -100px;
+            bottom: -120px;
+
+            background: rgba(255, 193, 7, 0.07);
+        }
+
+
+        /* =====================================================
+           LOGIN WRAPPER
+        ===================================================== */
+
+        .login-wrapper {
+            position: relative;
+
+            z-index: 1;
+
+            width: 100%;
+            max-width: 1050px;
+
+            min-height: 620px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            background: #ffffff;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px rgba(25, 66, 100, 0.14),
+                0 8px 25px rgba(25, 66, 100, 0.08);
+        }
+
+
+        /* =====================================================
+           LEFT PANEL
+        ===================================================== */
+
+        .login-brand {
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #005baa 0%,
+                    #0066b3 48%,
+                    #0878c9 100%
+                );
+
+            padding: 55px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            color: white;
+
+            overflow: hidden;
+        }
+
+
+        .login-brand::before {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            right: -220px;
+            top: -180px;
+
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+
+        .login-brand::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border-radius: 50%;
+
+            left: -170px;
+            bottom: -150px;
+
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+
+        /* =====================================================
+           BRAND
+        ===================================================== */
+
+        .brand-content {
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .brand-logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .logo-box {
+            width: 64px;
+            height: 64px;
+
+            background: #ffffff;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 7px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+
+        .brand-name h2 {
+            font-size: 19px;
+
+            font-weight: 750;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        .brand-name span {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.8px;
+
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .brand-title {
+            max-width: 450px;
+        }
+
+
+        .brand-title .small-title {
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #ffd54f;
+
+            margin-bottom: 13px;
+        }
+
+
+        .brand-title h1 {
+            font-size: 43px;
+
+            line-height: 1.08;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .brand-title p {
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: rgba(255, 255, 255, 0.82);
+
+            max-width: 430px;
+        }
+
+
+        /* =====================================================
+           FOOTER LEFT
+        ===================================================== */
+
+        .brand-footer {
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+
+        .brand-footer strong {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* =====================================================
+           RIGHT LOGIN PANEL
+        ===================================================== */
+
+        .login-panel {
+            padding: 55px 60px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #ffffff;
+        }
+
+
+        .login-content {
+            width: 100%;
+
+            max-width: 390px;
+        }
+
+
+        /* =====================================================
+           LOGIN HEADING
+        ===================================================== */
+
+        .login-heading {
+            margin-bottom: 35px;
+        }
+
+
+        .login-heading .label {
+            display: inline-block;
+
+            font-size: 11px;
+
+            font-weight: 750;
+
+            letter-spacing: 1.5px;
+
+            color: #0066b3;
+
+            background: #eef7ff;
+
+            padding: 7px 11px;
+
+            border-radius: 7px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .login-heading h2 {
+            font-size: 30px;
+
+            color: #173b5f;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+        }
+
+
+        .login-heading p {
+            color: #7a8b9c;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .form-group {
+            margin-bottom: 21px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            color: #334e68;
+
+            margin-bottom: 8px;
+        }
+
+
+        .input-wrapper {
+            position: relative;
+        }
+
+
+        .input-icon {
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 19px;
+            height: 19px;
+
+            color: #8ba0b3;
+
+            pointer-events: none;
+        }
+
+
+        .form-input {
+            width: 100%;
+
+            height: 52px;
+
+            border: 1px solid #d9e3ec;
+
+            border-radius: 10px;
+
+            padding: 0 15px 0 46px;
+
+            font-size: 14px;
+
+            color: #173b5f;
+
+            background: #fbfdff;
+
+            outline: none;
+
+            transition: all 0.2s ease;
+        }
+
+
+        .form-input::placeholder {
+            color: #a3b1be;
+        }
+
+
+        .form-input:focus {
+            border-color: #0066b3;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 4px rgba(0, 102, 179, 0.08);
+        }
+
+
+        /* =====================================================
+           PASSWORD TOGGLE
+        ===================================================== */
+
+        .password-toggle {
+            position: absolute;
+
+            right: 13px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #8195a8;
+
+            cursor: pointer;
+
+            padding: 5px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        .password-toggle:hover {
+            color: #0066b3;
+        }
+
+
+        .password-input {
+            padding-right: 90px;
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+        ===================================================== */
+
+        .login-button {
+            width: 100%;
+
+            height: 52px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #005baa,
+                    #0878c9
+                );
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 750;
+
+            letter-spacing: 0.2px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px rgba(0, 102, 179, 0.22);
+
+            transition: all 0.2s ease;
+
+            margin-top: 7px;
+        }
+
+
+        .login-button:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 11px 25px rgba(0, 102, 179, 0.28);
+        }
+
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           PEMBATAS
+        ===================================================== */
+
+        .divider {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin: 22px 0 17px;
+
+            color: #a0aec0;
+
+            font-size: 11px;
+        }
+
+
+        .divider::before,
+        .divider::after {
+            content: "";
+
+            flex: 1;
+
+            height: 1px;
+
+            background: #e5ebf0;
+        }
+
+
+        /* =====================================================
+           GUEST BUTTON
+        ===================================================== */
+
+        .guest-button {
+            width: 100%;
+
+            height: 49px;
+
+            border: 1px solid #cddce8;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            color: #17639a;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            transition: all 0.2s ease;
+        }
+
+
+        .guest-button:hover {
+            background: #f4f9fd;
+
+            border-color: #8fb8d6;
+
+            color: #005baa;
+
+            transform: translateY(-1px);
+        }
+
+
+        .guest-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+
+        /* =====================================================
+           LOGIN ERROR
+        ===================================================== */
+
+        .login-error {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 11px 13px;
+
+            border-radius: 8px;
+
+            background: #fff1f2;
+
+            border: 1px solid #fecdd3;
+
+            color: #be123c;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           DEMO INFO
+        ===================================================== */
+
+        .demo-info {
+            margin-top: 25px;
+
+            padding: 13px 15px;
+
+            border-radius: 9px;
+
+            background: #f7fafc;
+
+            border: 1px solid #e7edf3;
+
+            font-size: 11px;
+
+            color: #718096;
+
+            line-height: 1.6;
+        }
+
+
+        .demo-info strong {
+            color: #526579;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .login-wrapper {
+                grid-template-columns: 1fr;
+
+                max-width: 520px;
+            }
+
+
+            .login-brand {
+                min-height: 350px;
+
+                padding: 38px 40px;
+            }
+
+
+            .brand-title h1 {
+                font-size: 34px;
+            }
+
+
+            .brand-footer {
+                margin-top: 35px;
+            }
+
+
+            .login-panel {
+                padding: 45px 40px;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            body {
+                padding: 15px;
+            }
+
+
+            .login-wrapper {
+                border-radius: 18px;
+            }
+
+
+            .login-brand {
+                padding: 30px 25px;
+            }
+
+
+            .login-panel {
+                padding: 35px 25px;
+            }
+
+
+            .brand-logo {
+                margin-bottom: 30px;
+            }
+
+
+            .brand-title h1 {
+                font-size: 30px;
+            }
+
+
+            .login-heading h2 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background-circle circle-one"></div>
+    <div class="background-circle circle-two"></div>
+
+
+    <!-- =====================================================
+         LOGIN WRAPPER
+    ====================================================== -->
+
+    <main class="login-wrapper">
+
+
+        <!-- =================================================
+             PANEL KIRI
+        ================================================== -->
+
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+
+                <!-- LOGO -->
+
+                <div class="brand-logo">
+
+                    <div class="logo-box">
+
+                        <img
+                            src="image/LogoPLN.png"
+                            alt="Logo PLN"
+                        >
+
+                    </div>
+
+
+                    <div class="brand-name">
+
+                        <h2>
+                            PLN UIW NTT
+                        </h2>
+
+                        <span>
+                            TIRAI KASIH
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- JUDUL -->
+
+                <div class="brand-title">
+
+                    <div class="small-title">
+                        SISTEM MONITORING
+                    </div>
+
+
+                    <h1>
+                        TIRAI KASIH
+                    </h1>
+
+
+                    <p>
+                        Sistem Monitoring Bantuan Meteran Gratis
+                        PLN UIW NTT untuk membantu memantau proses
+                        bantuan listrik bagi masyarakat Nusa Tenggara Timur.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="brand-footer">
+
+                <strong>
+                    PLN UIW NTT
+                </strong>
+
+                <br>
+
+                Hadirkan terang, berikan harapan untuk masyarakat
+                Nusa Tenggara Timur.
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PANEL KANAN
+        ================================================== -->
+
+        <section class="login-panel">
+
+            <div class="login-content">
+
+
+                <!-- HEADING -->
+
+                <div class="login-heading">
+
+                    <span class="label">
+                        PORTAL PETUGAS
+                    </span>
+
+
+                    <h2>
+                        Selamat Datang
+                    </h2>
+
+
+                    <p>
+                        Silakan masuk untuk mengakses
+                        sistem monitoring Tirai Kasih.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     FORM LOGIN
+                ================================================== -->
+
+                <form id="loginForm">
+
+
+                    <!-- USERNAME -->
+
+                    <div class="form-group">
+
+                        <label for="username">
+                            Username
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <!-- Icon User -->
+
+                            <svg
+                                class="input-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            >
+
+                                <circle
+                                    cx="12"
+                                    cy="8"
+                                    r="3.5">
+                                </circle>
+
+                                <path
+                                    d="M5 20c.8-3.2 3.2-5 7-5s6.2 1.8 7 5">
+                                </path>
+
+                            </svg>
+
+
+                            <input
+                                type="text"
+                                id="username"
+                                class="form-input"
+                                placeholder="Masukkan username"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+
+                            <!-- Icon Lock -->
+
+                            <svg
+                                class="input-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            >
+
+                                <rect
+                                    x="5"
+                                    y="10"
+                                    width="14"
+                                    height="10"
+                                    rx="2">
+                                </rect>
+
+                                <path
+                                    d="M8 10V7a4 4 0 018 0v3">
+                                </path>
+
+                            </svg>
+
+
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-input password-input"
+                                placeholder="Masukkan password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <!-- Show Password -->
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                            >
+                                Lihat
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+                        Masuk ke Dashboard
+                    </button>
+
+
+                    <!-- ERROR -->
+
+                    <div
+                        class="login-error"
+                        id="loginError"
+                    >
+                        Username atau password yang Anda masukkan
+                        tidak sesuai.
+                    </div>
+
+
+                </form>
+
+
+                <!-- =================================================
+                     PEMBATAS
+                ================================================== -->
+
+                <div class="divider">
+                    atau
+                </div>
+
+
+                <!-- =================================================
+                     GUEST BUTTON
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="guest-button"
+                    id="guestButton"
+                >
+
+                    <!-- Icon Globe/User -->
+
+                    <svg
+                        class="guest-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="9">
+                        </circle>
+
+                        <path
+                            d="M3 12h18">
+                        </path>
+
+                        <path
+                            d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9">
+                        </path>
+
+                        <path
+                            d="M12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9">
+                        </path>
+
+                    </svg>
+
+
+                    Masuk sebagai Tamu
+
+                </button>
+
+
+                <!-- =================================================
+                     INFORMASI PROTOTYPE
+                ================================================== -->
+
+                <div class="demo-info">
+
+                    <strong>
+                        Prototype Sistem
+                    </strong>
+
+                    <br>
+
+                    Login petugas saat ini menggunakan
+                    autentikasi sementara tanpa database.
+
+                    Pengunjung dapat memilih
+                    <strong>Masuk sebagai Tamu</strong>
+                    untuk melihat dashboard.
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /*
+         * ==================================================
+         * KONFIGURASI LOGIN PROTOTYPE
+         * ==================================================
+         *
+         * Untuk sementara kita menggunakan username
+         * dan password statis.
+         *
+         * Username :
+         * admin
+         *
+         * Password :
+         * admin123
+         *
+         * Nanti akan diganti dengan Laravel + Database.
+         */
+
+
+        const usernameBenar = "admin";
+
+        const passwordBenar = "admin123";
+
+
+        /*
+         * ==================================================
+         * ELEMENT HTML
+         * ==================================================
+         */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const usernameInput =
+            document.getElementById("username");
+
+
+        const passwordInput =
+            document.getElementById("password");
+
+
+        const loginError =
+            document.getElementById("loginError");
+
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+
+        const guestButton =
+            document.getElementById("guestButton");
+
+
+        /*
+         * ==================================================
+         * SHOW / HIDE PASSWORD
+         * ==================================================
+         */
+
+        togglePassword.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type === "password"
+                ) {
+
+                    passwordInput.type = "text";
+
+                    togglePassword.textContent =
+                        "Sembunyikan";
+
+                }
+
+                else {
+
+                    passwordInput.type =
+                        "password";
+
+                    togglePassword.textContent =
+                        "Lihat";
+
+                }
+
+            }
+        );
+
+
+        /*
+         * ==================================================
+         * LOGIN PETUGAS / ADMIN
+         * ==================================================
+         */
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                /*
+                 * Mencegah form melakukan
+                 * reload halaman.
+                 */
+
+                event.preventDefault();
+
+
+                /*
+                 * Ambil input pengguna
+                 */
+
+                const username =
+                    usernameInput.value.trim();
+
+
+                const password =
+                    passwordInput.value;
+
+
+                /*
+                 * Cek username dan password
+                 */
+
+                if (
+                    username === usernameBenar &&
+                    password === passwordBenar
+                ) {
+
+                    /*
+                     * Login berhasil
+                     */
+
+                    loginError.style.display =
+                        "none";
+
+
+                    /*
+                     * Masuk ke dashboard
+                     */
+
+                    window.location.href =
+                        "Dashboard_TiraiKasih.html";
+
+                }
+
+                else {
+
+                    /*
+                     * Login gagal
+                     */
+
+                    loginError.style.display =
+                        "block";
+
+
+                    /*
+                     * Password dikosongkan
+                     */
+
+                    passwordInput.value = "";
+
+
+                    /*
+                     * Fokus kembali
+                     * ke password
+                     */
+
+                    passwordInput.focus();
+
+                }
+
+            }
+        );
+
+
+        /*
+         * ==================================================
+         * MASUK SEBAGAI TAMU
+         * ==================================================
+         *
+         * Tamu tidak membutuhkan username
+         * maupun password.
+         *
+         * Pengguna langsung diarahkan
+         * ke halaman dashboard.
+         */
+
+        guestButton.addEventListener(
+            "click",
+            function () {
+
+                window.location.href =
+                    "Dashboard_TiraiKasih.html";
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
