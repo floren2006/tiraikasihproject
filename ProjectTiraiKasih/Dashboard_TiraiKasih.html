@@ -1,0 +1,3517 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TIRAI KASIH | PLN UIW NTT</title>
+
+    <!-- FONT MODERN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pln-blue: #0066b3;
+    --pln-dark: #004b87;
+    --pln-light: #eaf5ff;
+    --pln-yellow: #ffd100;
+
+    --background: #f5f8fc;
+    --white: #ffffff;
+
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+
+    --border: #e5eaf0;
+
+    --success: #16a34a;
+    --warning: #f59e0b;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 255px;
+    height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        var(--pln-blue),
+        var(--pln-dark)
+    );
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 16px;
+
+    box-shadow: 5px 0 20px rgba(0, 60, 120, 0.08);
+
+    z-index: 10;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 8px 28px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.pln-logo {
+    width: 48px;
+    height: 48px;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.pln-logo img {
+    width: 54px;
+    height: 54px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transform: scale(1.08);
+}
+
+.brand h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.brand span {
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+
+/* MENU */
+
+.menu-title {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    opacity: 0.55;
+
+    margin: 28px 12px 10px;
+}
+
+.menu-title-admin {
+    margin-top: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    text-decoration: none;
+
+    color: rgba(255,255,255,0.82);
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.menu-item span:first-child {
+    width: 20px;
+    text-align: center;
+
+    font-size: 17px;
+}
+
+.menu-item:hover {
+    background: rgba(255,255,255,0.12);
+
+    color: white;
+}
+
+.menu-item.active {
+    background: white;
+
+    color: var(--pln-blue);
+
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.logout {
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 0;
+
+    padding-top: 18px;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 255px;
+
+    min-height: 100vh;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    height: 76px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+
+    font-size: 13px;
+
+    color: var(--text-gray);
+}
+
+.breadcrumb strong {
+    color: #cbd5e1;
+}
+
+.user-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.notification {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--pln-light);
+
+    color: var(--pln-blue);
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.user-info strong {
+    font-size: 13px;
+}
+
+.user-info span {
+    font-size: 11px;
+
+    color: var(--text-gray);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+
+    background: var(--pln-blue);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    padding: 30px 35px;
+}
+
+
+/* WELCOME */
+
+.welcome {
+    background: linear-gradient(
+        110deg,
+        #0066b3,
+        #0089d0
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 30px 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow: 0 10px 25px rgba(0,102,179,0.18);
+}
+
+.welcome::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.06);
+
+    right: 80px;
+    top: -140px;
+}
+
+.welcome-label {
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.75;
+}
+
+.welcome h1 {
+    font-size: 32px;
+
+    margin: 5px 0;
+
+    letter-spacing: 1px;
+}
+
+.welcome p {
+    font-size: 15px;
+
+    margin-bottom: 8px;
+}
+
+.welcome small {
+    opacity: 0.75;
+
+    font-size: 12px;
+}
+
+.welcome-icon {
+    font-size: 90px;
+
+    color: var(--pln-yellow);
+
+    opacity: 0.9;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.statistics {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-top: 22px;
+}
+
+.stat-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 4px 12px rgba(15,23,42,0.03);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.stat-icon.total {
+    background: #e8f4ff;
+    color: var(--pln-blue);
+}
+
+.stat-icon.success {
+    background: #e9f8ef;
+    color: var(--success);
+}
+
+.stat-icon.warning {
+    background: #fff7e6;
+    color: var(--warning);
+}
+
+.stat-icon.percentage {
+    background: #fff8d9;
+    color: #c99600;
+}
+
+.stat-information span {
+    font-size: 10px;
+
+    color: var(--text-gray);
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+.stat-information h2 {
+    font-size: 25px;
+
+    margin: 4px 0;
+}
+
+.stat-information small {
+    font-size: 10px;
+
+    color: #9ca3af;
+}
+
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.dashboard-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 23px;
+
+    margin-top: 20px;
+
+    box-shadow: 0 4px 12px rgba(15,23,42,0.03);
+}
+
+.dashboard-grid .dashboard-card {
+    margin-top: 0;
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 22px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    font-size: 11px;
+
+    color: var(--text-gray);
+}
+
+.more-button {
+    border: none;
+
+    background: transparent;
+
+    color: #9ca3af;
+
+    cursor: pointer;
+
+    letter-spacing: 2px;
+}
+
+.view-all,
+.map-button {
+    border: none;
+
+    background: var(--pln-light);
+
+    color: var(--pln-blue);
+
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   DONUT CHART
+========================= */
+
+.status-chart {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    min-height: 210px;
+}
+
+.donut {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            var(--pln-blue) 0deg 295.5deg,
+            var(--pln-yellow) 295.5deg 360deg
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.donut::before {
+    content: "";
+
+    width: 105px;
+    height: 105px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+}
+
+.donut-center {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.donut-center strong {
+    font-size: 21px;
+
+    color: var(--pln-blue);
+}
+
+.donut-center span {
+    font-size: 10px;
+
+    color: var(--text-gray);
+}
+
+.chart-legend {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.legend-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+}
+
+.legend-dot.blue {
+    background: var(--pln-blue);
+}
+
+.legend-dot.yellow {
+    background: var(--pln-yellow);
+}
+
+.legend-item div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.legend-item strong {
+    font-size: 16px;
+}
+
+.legend-item span {
+    font-size: 10px;
+
+    color: var(--text-gray);
+}
+
+
+/* =========================
+   BAR CHART
+========================= */
+
+.bar-chart {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.bar-item {
+    display: grid;
+
+    grid-template-columns: 105px 1fr 35px;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+.bar-label {
+    font-size: 10px;
+
+    color: var(--text-gray);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.bar-background {
+    height: 8px;
+
+    background: #edf2f7;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+
+    border-radius: 20px;
+}
+
+.blue-bar {
+    background: linear-gradient(
+        90deg,
+        #0066b3,
+        #38a8e8
+    );
+}
+
+.bar-item strong {
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-card {
+    min-height: 350px;
+}
+
+.map-placeholder {
+    height: 280px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ff,
+            #f8fbff
+        );
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.map-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px dashed rgba(0,102,179,0.15);
+
+    border-radius: 50%;
+}
+
+.map-content {
+    text-align: center;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.map-symbol {
+    width: 90px;
+    height: 90px;
+
+    margin: auto auto 15px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--pln-blue);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(0,102,179,0.12);
+}
+
+.map-content h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.map-content p {
+    font-size: 11px;
+
+    color: var(--text-gray);
+}
+
+.map-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 18px;
+
+    font-size: 10px;
+
+    color: var(--text-gray);
+}
+
+.map-info div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.map-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+}
+
+.map-dot.high {
+    background: #0066b3;
+}
+
+.map-dot.medium {
+    background: #39a7df;
+}
+
+.map-dot.low {
+    background: #9dd7f3;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f8fafc;
+}
+
+th {
+    text-align: left;
+
+    font-size: 10px;
+
+    color: var(--text-gray);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    padding: 13px 14px;
+}
+
+td {
+    padding: 15px 14px;
+
+    border-top: 1px solid #edf0f4;
+
+    font-size: 12px;
+}
+
+td strong {
+    font-size: 12px;
+}
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.status-success {
+    background: #eaf8ef;
+
+    color: #15803d;
+}
+
+.status-warning {
+    background: #fff5df;
+
+    color: #b45309;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 75px;
+
+        padding: 20px 10px;
+    }
+
+    .brand div:last-child,
+    .menu-item span:last-child,
+    .menu-title {
+        display: none;
+    }
+
+    .brand {
+        justify-content: center;
+
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .menu-item {
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 75px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .user-info {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding: 25px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .status-chart {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .bar-item {
+        grid-template-columns: 85px 1fr 30px;
+    }
+
+}
+
+/* ========================================
+   BANNER DATA SIMULASI
+======================================== */
+
+.simulation-notice {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    background: #fff8e6;
+    border: 1px solid #f3d98b;
+    border-left: 5px solid #f5b400;
+
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+}
+
+.notice-icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    background: #f5b400;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+.simulation-notice strong {
+    display: block;
+
+    color: #8a6100;
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+.simulation-notice p {
+    margin: 0;
+
+    color: #756b52;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   KPI DASHBOARD BARU
+======================================== */
+
+.kpi-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+}
+
+
+.kpi-card {
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border: 1px solid #e8edf3;
+
+    box-shadow: 0 4px 14px rgba(0, 54, 110, 0.06);
+
+    transition: 0.2s ease;
+}
+
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 20px rgba(0, 54, 110, 0.10);
+}
+
+
+/* ========================================
+   IKON KPI
+======================================== */
+
+.kpi-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   INFORMASI KPI
+======================================== */
+
+.kpi-info span {
+    display: block;
+
+    color: #6b7785;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+
+.kpi-info strong {
+    display: block;
+
+    color: #172b3a;
+
+    font-size: 26px;
+
+    line-height: 1.1;
+}
+
+
+.kpi-info small {
+    display: block;
+
+    color: #8b98a5;
+
+    font-size: 10px;
+
+    margin-top: 5px;
+}
+
+
+/* ========================================
+   WARNA KPI
+======================================== */
+
+.kpi-blue .kpi-icon {
+    background: #e8f4ff;
+    color: #0066b3;
+}
+
+
+.kpi-orange .kpi-icon {
+    background: #fff2df;
+    color: #e58b00;
+}
+
+
+.kpi-green .kpi-icon {
+    background: #e8f8ef;
+    color: #16965b;
+}
+
+
+.kpi-red .kpi-icon {
+    background: #ffebeb;
+    color: #d64b4b;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ========================================
+   DATA PENERIMA
+======================================== */
+
+.data-section {
+    background: #ffffff;
+    border: 1px solid #e5ebf2;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: 0 4px 14px rgba(0, 54, 110, 0.05);
+}
+
+
+/* HEADER */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #172b3a;
+}
+
+.section-header p {
+    margin: 0;
+    color: #7b8794;
+    font-size: 13px;
+}
+
+
+/* BUTTON */
+
+.btn-primary {
+    border: none;
+    background: #0066b3;
+    color: white;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #005494;
+}
+
+
+/* FILTER */
+
+.data-filter {
+    display: grid;
+    grid-template-columns: 1fr 220px 180px;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid #dfe6ee;
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    background: #fafcfe;
+}
+
+.search-box span {
+    font-size: 14px;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 11px 0;
+
+    font-size: 13px;
+}
+
+.data-filter select {
+    border: 1px solid #dfe6ee;
+    border-radius: 9px;
+
+    padding: 11px;
+
+    background: #fafcfe;
+
+    color: #465565;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+/* TABLE */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 12px;
+}
+
+.data-table thead {
+    background: #f2f7fb;
+}
+
+.data-table th {
+    padding: 13px 12px;
+
+    text-align: left;
+
+    color: #405366;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid #dfe7ef;
+
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 13px 12px;
+
+    color: #4f5f6f;
+
+    border-bottom: 1px solid #edf1f5;
+
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background: #f9fcff;
+}
+
+
+/* STATUS */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status-usulan {
+    background: #fff3d6;
+    color: #a96f00;
+}
+
+.status-verifikasi {
+    background: #e8f1ff;
+    color: #2468a8;
+}
+
+.status-siap {
+    background: #eeeaff;
+    color: #6950a8;
+}
+
+.status-nyala {
+    background: #e5f7ed;
+    color: #16834d;
+}
+
+
+/* ACTION */
+
+.action-btn {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    margin-right: 4px;
+
+    background: #edf5fb;
+}
+
+.action-btn:hover {
+    background: #dcecf8;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .data-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
+/* ==========================================
+   PETA NTT
+========================================== */
+
+.ntt-map-container {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    margin-top: 10px;
+    background: linear-gradient(
+        180deg,
+        #f5fbff 0%,
+        #edf7fd 100%
+    );
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #dceaf5;
+}
+
+#nttMap {
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+
+/* Wilayah pada peta */
+
+.ntt-region {
+    stroke: #ffffff;
+    stroke-width: 1.2;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ntt-region:hover {
+    stroke: #0b72c9;
+    stroke-width: 2.5;
+    filter: brightness(1.08);
+}
+
+/* Loading */
+
+.ntt-map-loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+
+    background: rgba(255,255,255,0.95);
+    padding: 14px 22px;
+    border-radius: 10px;
+
+    color: #1769aa;
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* Legend */
+
+.ntt-map-legend {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    background: rgba(255,255,255,0.96);
+    padding: 14px 16px;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    font-size: 12px;
+    color: #425466;
+}
+
+.legend-title {
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 9px;
+}
+
+.legend-item-map {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.legend-color.high {
+    background: #0878c9;
+}
+
+.legend-color.medium {
+    background: #36a9e1;
+}
+
+.legend-color.low {
+    background: #a9d9f2;
+}
+
+/* Popup */
+
+.ntt-map-popup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    z-index: 20;
+    pointer-events: auto;
+    display: none;
+}
+
+.ntt-map-popup h4 {
+    margin: 0 25px 15px 0;
+    font-size: 16px;
+    color: #12395b;
+}
+
+.close-map-popup {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    color: #7b8794;
+}
+
+.popup-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #edf1f5;
+
+    font-size: 12px;
+}
+
+.popup-row:last-child {
+    border-bottom: none;
+}
+
+.popup-row span {
+    color: #718096;
+}
+
+.popup-row strong {
+    color: #0b72c9;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .ntt-map-container {
+        min-height: 400px;
+    }
+
+    #nttMap {
+        height: 400px;
+    }
+
+    .ntt-map-popup {
+        width: min(230px, calc(100% - 24px));
+    }
+
+}
+
+/* =========================================================
+   INTERAKSI PETA NTT - MINIMAL & MODERN
+========================================================= */
+
+.ntt-region {
+    cursor: pointer;
+    transition: filter 0.18s ease, opacity 0.18s ease;
+}
+
+.ntt-region:hover {
+    filter: brightness(1.08);
+}
+
+.ntt-map-popup {
+    width: 250px;
+    padding: 16px 18px;
+    border: 1px solid #e5edf5;
+    box-shadow: 0 12px 30px rgba(19, 59, 95, 0.16);
+    pointer-events: auto;
+}
+
+.ntt-map-popup h4 {
+    margin: 0 24px 12px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #12395b;
+}
+
+.ntt-map-popup .popup-row {
+    padding: 7px 0;
+}
+
+.ntt-map-popup .popup-row strong {
+    color: #0878c9;
+}
+
+.close-map-popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.close-map-popup:hover {
+    background: #e2e8f0;
+    color: #173b5f;
+}
+
+/* =========================================================
+   ICON MODERN SIDEBAR & HEADER
+========================================================= */
+
+.menu-item svg {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.menu-item span:last-child {
+    line-height: 1.2;
+}
+
+.notification svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.user-avatar svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    font-size: 14px;
+    position: relative;
+    z-index: 20;
+}
+
+.breadcrumb-current,
+.breadcrumb-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 46px;
+    white-space: nowrap;
+}
+
+/* Halaman aktif: TIRAI KASIH berada di depan */
+.breadcrumb-current {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    background: linear-gradient(135deg, #0878cf 0%, #005baa 100%);
+    padding: 0 28px 0 22px;
+    min-width: 210px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 91, 170, 0.20);
+}
+
+.breadcrumb-current::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -22px;
+    width: 38px;
+    height: 46px;
+    background: linear-gradient(135deg, #0878cf 0%, #005baa 100%);
+    clip-path: polygon(0 0, 58% 50%, 0 100%);
+    z-index: -1;
+}
+
+/* Dashboard berada di belakang */
+.breadcrumb-home {
+    position: relative;
+    z-index: 1;
+    color: #1668ad;
+    font-weight: 600;
+    background: linear-gradient(135deg, #f2f8fd 0%, #e8f2fa 100%);
+    border: 1px solid #d7e7f4;
+    padding: 0 22px 0 38px;
+    margin-left: -8px;
+    min-width: 205px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 91, 170, 0.08);
+}
+
+.breadcrumb-home::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 34px;
+    height: 44px;
+    background: #e8f2fa;
+    clip-path: polygon(100% 0, 42% 50%, 100% 100%);
+    z-index: -1;
+}
+
+.breadcrumb-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.breadcrumb-arrow {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin: 0 -2px 0 -1px;
+    fill: none;
+    stroke: #8da4b9;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    position: relative;
+    z-index: 3;
+}
+
+.breadcrumb-current:hover {
+    filter: brightness(1.04);
+}
+
+.breadcrumb-home:hover {
+    color: #005baa;
+    background: #edf6fd;
+}
+
+@media (max-width: 800px) {
+    .menu-item svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="brand">
+
+            <div class="pln-logo">
+                <img src="image/LogoPLN.png" alt="Logo PLN">
+            </div>
+
+            <div>
+                <h2>PLN UIW NTT</h2>
+                <span>TIRAI KASIH</span>
+            </div>
+
+        </div>
+
+
+        <!-- MENU UTAMA -->
+        <div class="menu-title">
+            MENU UTAMA
+        </div>
+
+        <nav class="menu">
+
+            <a href="#dashboard" class="menu-item active">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.8 12 3l9 7.8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#data-bantuan" class="menu-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8h7"/><path d="M8.5 12h7"/><path d="M8.5 16h4"/></svg>
+                <span>Data Bantuan</span>
+            </a>
+
+            <a href="#tambah-data" class="menu-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                <span>Tambah Data</span>
+            </a>
+
+            <a href="#rekapitulasi" class="menu-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M12 16V8"/><path d="M16 16V6"/></svg>
+                <span>Rekapitulasi</span>
+            </a>
+
+            <a href="#peta" class="menu-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 6 5-3 6 3 5-3v15l-5 3-6-3-5 3V6Z"/><path d="M9 3v15"/><path d="M15 6v15"/></svg>
+                <span>Peta Sebaran</span>
+            </a>
+
+        </nav>
+
+
+        <!-- ADMINISTRASI -->
+        <div class="menu-title menu-title-admin">
+            ADMINISTRASI
+        </div>
+
+        <nav class="menu">
+
+            <a href="#manajemen-user" class="menu-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"/></svg>
+                <span>Manajemen User</span>
+            </a>
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+        <div class="sidebar-bottom">
+
+            <a href="#" class="menu-item logout">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H5v14h5"/><path d="M13 8l4 4-4 4"/><path d="M8 12h9"/></svg>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="main-content">
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+        <header class="topbar">
+            <div class="breadcrumb">
+                <span class="breadcrumb-current">
+                    <svg class="breadcrumb-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3 10.5 12 3l9 7.5"/>
+                        <path d="M5 9.5V21h14V9.5"/>
+                        <path d="M9 21v-7h6v7"/>
+                    </svg>
+                    <span>Tirai Kasih</span>
+                </span>
+                <svg class="breadcrumb-arrow" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"/>
+                </svg>
+                <span class="breadcrumb-home">
+                    <svg class="breadcrumb-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </span>
+            </div>
+
+
+            <div class="user-area">
+
+                <div class="notification" title="Notifikasi">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg>
+                </div>
+
+                <div class="user-info">
+
+                    <strong>Administrator</strong>
+
+                    <span>
+                        Admin PLN UIW NTT
+                    </span>
+
+                </div>
+
+                <div class="user-avatar" title="Administrator">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"/></svg>
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+        <section class="content" id="dashboard">
+
+
+            <!-- =================================================
+                 INFORMASI SIMULASI
+            ================================================== -->
+            <div class="simulation-notice">
+
+                <div class="notice-icon">
+                    ⚠
+                </div>
+
+                <div>
+
+                    <strong>
+                        DATA SIMULASI — BUKAN PENERIMA AKTUAL
+                    </strong>
+
+                    <p>
+                        Data yang ditampilkan digunakan untuk
+                        pengujian prototype sistem TIRAI KASIH.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HERO / WELCOME
+            ================================================== -->
+            <div class="welcome">
+
+                <div>
+
+                    <span class="welcome-label">
+                        SISTEM MONITORING
+                    </span>
+
+                    <h1>
+                        TIRAI KASIH
+                    </h1>
+
+                    <p>
+                        Monitoring Bantuan Meteran Gratis PLN UIW NTT
+                    </p>
+
+                    <small>
+                        Hadirkan terang, berikan harapan untuk
+                        masyarakat Nusa Tenggara Timur.
+                    </small>
+
+                </div>
+
+
+                <div class="welcome-icon">
+                    ⚡
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 KPI / STATISTIK
+            ================================================== -->
+            <div class="kpi-grid">
+
+
+                <!-- USULAN AKTIF -->
+                <div class="kpi-card kpi-blue">
+
+                    <div class="kpi-icon">
+                        📋
+                    </div>
+
+                    <div class="kpi-info">
+
+                        <span>
+                            USULAN AKTIF
+                        </span>
+
+                        <strong id="totalAktif">
+                            6
+                        </strong>
+
+                        <small>
+                            Data dalam jalur aktif
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DALAM PROSES -->
+                <div class="kpi-card kpi-orange">
+
+                    <div class="kpi-icon">
+                        ⚙
+                    </div>
+
+                    <div class="kpi-info">
+
+                        <span>
+                            DALAM PROSES
+                        </span>
+
+                        <strong id="totalProses">
+                            3
+                        </strong>
+
+                        <small>
+                            Diusulkan sampai siap pasang
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SUDAH NYALA -->
+                <div class="kpi-card kpi-green">
+
+                    <div class="kpi-icon">
+                        ⚡
+                    </div>
+
+                    <div class="kpi-info">
+
+                        <span>
+                            SUDAH NYALA
+                        </span>
+
+                        <strong id="totalNyala">
+                            2
+                        </strong>
+
+                        <small>
+                            Bukti nyala lengkap
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- KENDALA -->
+                <div class="kpi-card kpi-red">
+
+                    <div class="kpi-icon">
+                        !
+                    </div>
+
+                    <div class="kpi-info">
+
+                        <span>
+                            KENDALA TERBUKA
+                        </span>
+
+                        <strong id="totalKendala">
+                            2
+                        </strong>
+
+                        <small>
+                            Perlu tindak lanjut
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CHART SECTION
+            ================================================== -->
+            <div class="dashboard-grid">
+
+
+                <!-- STATUS PENYALAAN -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Status Penyalaan
+                            </h3>
+
+                            <p>
+                                Perbandingan meteran penerima bantuan
+                            </p>
+
+                        </div>
+
+                        <button class="more-button">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="status-chart">
+
+                        <div class="donut">
+
+                            <div class="donut-center">
+
+                                <strong>
+                                    82,1%
+                                </strong>
+
+                                <span>
+                                    Menyala
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-legend">
+
+                            <div class="legend-item">
+
+                                <span class="legend-dot blue"></span>
+
+                                <div>
+
+                                    <strong>
+                                        1.512
+                                    </strong>
+
+                                    <span>
+                                        Sudah Menyala
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-dot yellow"></span>
+
+                                <div>
+
+                                    <strong>
+                                        330
+                                    </strong>
+
+                                    <span>
+                                        Belum Menyala
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REKAP PENERIMA -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Rekap Penerima
+                            </h3>
+
+                            <p>
+                                Berdasarkan kabupaten/kota
+                            </p>
+
+                        </div>
+
+                        <button class="more-button">
+                            •••
+                        </button>
+
+                    </div>
+
+
+                    <div class="bar-chart">
+
+
+                        <div class="bar-item">
+
+                            <div class="bar-label">
+                                Kota Kupang
+                            </div>
+
+                            <div class="bar-background">
+
+                                <div
+                                    class="bar blue-bar"
+                                    style="width:88%;">
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                420
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="bar-item">
+
+                            <div class="bar-label">
+                                Kupang
+                            </div>
+
+                            <div class="bar-background">
+
+                                <div
+                                    class="bar blue-bar"
+                                    style="width:76%;">
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                365
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="bar-item">
+
+                            <div class="bar-label">
+                                TTS
+                            </div>
+
+                            <div class="bar-background">
+
+                                <div
+                                    class="bar blue-bar"
+                                    style="width:63%;">
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                301
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="bar-item">
+
+                            <div class="bar-label">
+                                TTU
+                            </div>
+
+                            <div class="bar-background">
+
+                                <div
+                                    class="bar blue-bar"
+                                    style="width:54%;">
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                260
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="bar-item">
+
+                            <div class="bar-label">
+                                Belu
+                            </div>
+
+                            <div class="bar-background">
+
+                                <div
+                                    class="bar blue-bar"
+                                    style="width:42%;">
+                                </div>
+
+                            </div>
+
+                            <strong>
+                                201
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PETA NTT
+            ================================================== -->
+            <div
+                class="dashboard-card map-card"
+                id="peta"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Peta Sebaran Bantuan
+                        </h3>
+
+                        <p>
+                            Distribusi penerima bantuan
+                            Tirai Kasih di Nusa Tenggara Timur
+                        </p>
+
+                    </div>
+
+
+                    <button class="map-button">
+                        Lihat Peta Lengkap
+                    </button>
+
+                </div>
+
+
+                <!--
+                    TEMPAT PETA NTT
+
+                    script.js akan membaca file:
+                    map/nusa-tenggara-timur-simplified-topo.json
+                -->
+
+                <div class="ntt-map-container">
+
+                    <div
+                        class="ntt-map-loading"
+                        id="nttMapLoading"
+                    >
+                        🗺️ Memuat Peta NTT...
+                    </div>
+
+                    <svg
+                        id="nttMap"
+                        viewBox="0 0 1000 600"
+                        preserveAspectRatio="xMidYMid meet"
+                    ></svg>
+
+
+                    <!-- LEGEND -->
+
+                    <div class="ntt-map-legend">
+
+                        <div class="legend-title">
+                            Jumlah Penerima
+                        </div>
+
+                        <div class="legend-item-map">
+
+                            <span class="legend-color high"></span>
+
+                            <span>
+                                Tinggi
+                            </span>
+
+                        </div>
+
+                        <div class="legend-item-map">
+
+                            <span class="legend-color medium"></span>
+
+                            <span>
+                                Sedang
+                            </span>
+
+                        </div>
+
+                        <div class="legend-item-map">
+
+                            <span class="legend-color low"></span>
+
+                            <span>
+                                Rendah
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- POPUP -->
+
+                    <div
+                        id="nttMapPopup"
+                        class="ntt-map-popup"
+                        style="display:none;"
+                    >
+
+                        <button
+                            class="close-map-popup"
+                            id="closeMapPopup"
+                        >
+                            ×
+                        </button>
+
+                        <h4 id="popupWilayah">
+                            Wilayah NTT
+                        </h4>
+
+                        <div class="popup-row">
+
+                            <span>
+                                Total Penerima
+                            </span>
+
+                            <strong id="popupTotal">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="popup-row">
+
+                            <span>
+                                Sudah Menyala
+                            </span>
+
+                            <strong id="popupNyala">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="popup-row">
+
+                            <span>
+                                Belum Menyala
+                            </span>
+
+                            <strong id="popupBelum">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="popup-row">
+
+                            <span>
+                                Persentase Nyala
+                            </span>
+
+                            <strong id="popupPersentase">
+                                0%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DATA PENERIMA TERBARU
+            ================================================== -->
+            <div
+                class="dashboard-card"
+                id="data-bantuan"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Data Penerima Terbaru
+                        </h3>
+
+                        <p>
+                            Data bantuan yang terakhir dimasukkan
+                        </p>
+
+                    </div>
+
+
+                    <button class="view-all">
+                        Lihat Semua
+                    </button>
+
+                </div>
+
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Nama
+                                </th>
+
+                                <th>
+                                    Kabupaten
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Tanggal Input
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Maria Bano
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Kota Kupang
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        class="status status-success">
+                                        Sudah Menyala
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    15 Oktober 2026
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Yosef Taneo
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Kabupaten Kupang
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        class="status status-success">
+                                        Sudah Menyala
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    14 Oktober 2026
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Agustinus Kefi
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Timor Tengah Selatan
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        class="status status-warning">
+                                        Belum Menyala
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    14 Oktober 2026
+                                </td>
+
+                            </tr>
+
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        Maria Lidia
+                                    </strong>
+                                </td>
+
+                                <td>
+                                    Belu
+                                </td>
+
+                                <td>
+
+                                    <span
+                                        class="status status-success">
+                                        Sudah Menyala
+                                    </span>
+
+                                </td>
+
+                                <td>
+                                    13 Oktober 2026
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CATATAN PROTOTYPE
+            ================================================== -->
+            <div
+                class="prototype-footer"
+                id="rekapitulasi"
+            >
+
+                <strong>
+                    Prototype Sistem TIRAI KASIH
+                </strong>
+
+                <span>
+                    Data saat ini masih berupa data simulasi.
+                    Integrasi database akan dilakukan pada tahap berikutnya.
+                </span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+    <script>
+        /* =========================================================
+           JAVASCRIPT TIRAI KASIH PLN UIW NTT
+           Gabungan dari js/script.js
+        ========================================================= */
+
+/* =========================================================
+   TIRAI KASIH PLN UIW NTT
+   PETA SEBARAN NTT
+========================================================= */
+
+console.log("Dashboard TIRAI KASIH PLN UIW NTT aktif.");
+console.log("=== MEMUAT PETA NTT ===");
+
+
+/* =========================================================
+   DATA SIMULASI PENERIMA
+   NANTI DATA INI AKAN DIGANTI DARI DATABASE
+========================================================= */
+
+const dataPenerimaNTT = {
+
+    "Kota Kupang": 420,
+    "Kupang": 365,
+    "Timor Tengah Selatan": 301,
+    "Timor Tengah Utara": 260,
+    "Belu": 201,
+    "Alor": 180,
+    "Flores Timur": 165,
+    "Sikka": 150,
+    "Ende": 145,
+    "Ngada": 130,
+    "Manggarai": 190,
+    "Sumba Timur": 175,
+    "Sumba Barat": 110,
+    "Lembata": 120,
+    "Rote Ndao": 105,
+    "Manggarai Barat": 155,
+    "Nagekeo": 95,
+    "Sumba Tengah": 80,
+    "Sumba Barat Daya": 140,
+    "Manggarai Timur": 125,
+    "Sabu Raijua": 75,
+    "Malaka": 135
+
+};
+
+
+/* =========================================================
+   ELEMEN PETA
+========================================================= */
+
+const svg = document.getElementById("nttMap");
+const loading = document.getElementById("nttMapLoading");
+const popup = document.getElementById("nttMapPopup");
+
+const popupWilayah = document.getElementById("popupWilayah");
+const popupTotal = document.getElementById("popupTotal");
+const popupNyala = document.getElementById("popupNyala");
+const popupBelum = document.getElementById("popupBelum");
+const popupPersentase = document.getElementById("popupPersentase");
+
+const closePopup = document.getElementById("closeMapPopup");
+
+
+/* =========================================================
+   CEK ELEMEN
+========================================================= */
+
+if (!svg) {
+
+    console.error("Elemen #nttMap tidak ditemukan.");
+
+} else {
+
+    console.log("Elemen #nttMap ditemukan.");
+
+}
+
+
+/* =========================================================
+   TUTUP POPUP
+========================================================= */
+
+if (closePopup) {
+
+    closePopup.addEventListener("click", function () {
+
+        popup.style.display = "none";
+
+    });
+
+}
+
+
+/* Klik area kosong pada peta untuk menutup detail wilayah */
+const mapContainer = document.querySelector(".ntt-map-container");
+if (mapContainer) {
+    mapContainer.addEventListener("click", function (event) {
+        if (event.target === mapContainer || event.target === svg) {
+            popup.style.display = "none";
+        }
+    });
+}
+
+/* =========================================================
+   AMBIL NAMA WILAYAH NTT
+========================================================= */
+
+function ambilNamaWilayah(properties) {
+
+    if (!properties) {
+        return "Wilayah NTT";
+    }
+
+    const nama =
+        properties.kabkot ||
+        properties.KABKOT ||
+        properties.kabupaten_kota ||
+        properties.KABUPATEN_KOTA ||
+        properties.kabupaten ||
+        properties.KABUPATEN ||
+        properties.KABKOTA ||
+        properties.KABKOTA_NAME ||
+        properties.name ||
+        properties.NAME_2 ||
+        properties.NAME_1 ||
+        properties.NAMOBJ ||
+        properties.namobj ||
+        properties.WADMKK ||
+        properties.WADMPR ||
+        properties.nama;
+
+    return nama || "Wilayah NTT";
+}
+
+/* =========================================================
+   WARNA BERDASARKAN JUMLAH PENERIMA
+========================================================= */
+
+function warnaWilayah(jumlah) {
+
+    if (jumlah >= 200) {
+
+        return "#0878c9";
+
+    }
+
+    if (jumlah >= 120) {
+
+        return "#36a9e1";
+
+    }
+
+    return "#a9d9f2";
+
+}
+
+/* =========================================================
+   FORMAT ANGKA
+========================================================= */
+
+function formatAngka(angka) {
+
+    return Number(angka).toLocaleString("id-ID");
+
+}
+
+
+/* =========================================================
+   TAMPILKAN POPUP
+========================================================= */
+
+function tampilkanPopup(nama, jumlah, targetElement) {
+
+    if (!popup) {
+        return;
+    }
+
+    const sudahNyala = Math.round(jumlah * 0.82);
+    const belumNyala = jumlah - sudahNyala;
+    const persentase = jumlah > 0
+        ? ((sudahNyala / jumlah) * 100).toFixed(1)
+        : "0.0";
+
+    popupWilayah.textContent = nama;
+    popupTotal.textContent = formatAngka(jumlah);
+    popupNyala.textContent = formatAngka(sudahNyala);
+    popupBelum.textContent = formatAngka(belumNyala);
+
+    if (popupPersentase) {
+        popupPersentase.textContent = persentase.replace(".", ",") + "%";
+    }
+
+    popup.style.display = "block";
+
+    // Popup ditempatkan di luar batas wilayah agar wilayah yang dipilih tetap terlihat.
+    if (targetElement) {
+        const mapContainer = document.querySelector(".ntt-map-container");
+        const regionPath = targetElement.querySelector(".ntt-region");
+
+        if (mapContainer && regionPath) {
+            const containerRect = mapContainer.getBoundingClientRect();
+            const regionRect = regionPath.getBoundingClientRect();
+            const popupWidth = popup.offsetWidth;
+            const popupHeight = popup.offsetHeight;
+            const jarak = 32;
+            const margin = 12;
+
+            const regionLeft = regionRect.left - containerRect.left;
+            const regionRight = regionRect.right - containerRect.left;
+            const regionTop = regionRect.top - containerRect.top;
+            const regionBottom = regionRect.bottom - containerRect.top;
+
+            const ruangKanan = containerRect.width - regionRight;
+            const ruangKiri = regionLeft;
+            const ruangAtas = regionTop;
+            const ruangBawah = containerRect.height - regionBottom;
+
+            let left;
+            let top;
+
+            if (ruangKanan >= popupWidth + jarak + margin) {
+                left = regionRight + jarak;
+                top = regionTop + ((regionRect.height - popupHeight) / 2);
+            } else if (ruangKiri >= popupWidth + jarak + margin) {
+                left = regionLeft - popupWidth - jarak;
+                top = regionTop + ((regionRect.height - popupHeight) / 2);
+            } else if (ruangAtas >= popupHeight + jarak + margin) {
+                left = regionLeft + ((regionRect.width - popupWidth) / 2);
+                top = regionTop - popupHeight - jarak;
+            } else if (ruangBawah >= popupHeight + jarak + margin) {
+                left = regionLeft + ((regionRect.width - popupWidth) / 2);
+                top = regionBottom + jarak;
+            } else {
+                const ruangTerbesar = Math.max(ruangKanan, ruangKiri, ruangAtas, ruangBawah);
+
+                if (ruangTerbesar === ruangKanan) {
+                    left = regionRight + jarak;
+                    top = regionTop;
+                } else if (ruangTerbesar === ruangKiri) {
+                    left = regionLeft - popupWidth - jarak;
+                    top = regionTop;
+                } else if (ruangTerbesar === ruangAtas) {
+                    left = regionLeft + ((regionRect.width - popupWidth) / 2);
+                    top = regionTop - popupHeight - jarak;
+                } else {
+                    left = regionLeft + ((regionRect.width - popupWidth) / 2);
+                    top = regionBottom + jarak;
+                }
+            }
+
+            left = Math.max(margin, Math.min(left, containerRect.width - popupWidth - margin));
+            top = Math.max(margin, Math.min(top, containerRect.height - popupHeight - margin));
+
+            popup.style.left = left + "px";
+            popup.style.top = top + "px";
+        }
+    }
+}
+
+
+let wilayahTerpilih = null;
+
+function tutupPopup() {
+    wilayahTerpilih = null;
+    if (popup) {
+        popup.style.display = "none";
+    }
+}
+
+
+/* =========================================================
+   LOAD TOPOJSON
+========================================================= */
+
+async function loadPetaNTT() {
+
+    try {
+
+        console.log("Mengambil file TopoJSON...");
+
+        const response = await fetch(
+            "map/nusa-tenggara-timur-simplified-topo.json"
+        );
+
+        /* -------------------------------------------------
+           CEK RESPONSE
+        ------------------------------------------------- */
+
+        console.log(
+            "Status file peta:",
+            response.status
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "File peta tidak ditemukan. Status: " +
+                response.status
+            );
+
+        }
+
+
+        /* -------------------------------------------------
+           BACA JSON
+        ------------------------------------------------- */
+
+        const topology = await response.json();
+
+        console.log(
+            "Isi TopoJSON berhasil dibaca:",
+            topology
+        );
+
+
+        /* -------------------------------------------------
+           CEK TOPOLOGY
+        ------------------------------------------------- */
+
+        if (!topology.objects) {
+
+            throw new Error(
+                "File bukan TopoJSON yang valid."
+            );
+
+        }
+
+
+        console.log(
+            "Objek TopoJSON:",
+            topology.objects
+        );
+
+
+        /* -------------------------------------------------
+           AMBIL OBJECT PERTAMA
+        ------------------------------------------------- */
+
+        const objectName =
+            Object.keys(topology.objects)[0];
+
+        const geoObject =
+            topology.objects[objectName];
+
+
+        console.log(
+            "Object peta:",
+            objectName
+        );
+
+
+        /* -------------------------------------------------
+           KONVERSI TOPOJSON → GEOJSON
+        ------------------------------------------------- */
+
+        const geojson =
+            topojson.feature(
+                topology,
+                geoObject
+            );
+
+
+        console.log(
+            "GeoJSON berhasil dibuat:",
+            geojson
+        );
+
+
+        /* -------------------------------------------------
+           BERSIHKAN SVG
+        ------------------------------------------------- */
+
+        svg.innerHTML = "";
+
+
+        /* -------------------------------------------------
+           UKURAN SVG
+        ------------------------------------------------- */
+
+        const width = 1000;
+        const height = 600;
+
+
+        /* -------------------------------------------------
+           PROJECTION
+        ------------------------------------------------- */
+
+        const projection =
+            d3.geoMercator()
+                .fitSize(
+                    [width, height],
+                    geojson
+                );
+
+
+        /* -------------------------------------------------
+           PATH
+        ------------------------------------------------- */
+
+        const path =
+            d3.geoPath()
+                .projection(projection);
+
+
+        /* -------------------------------------------------
+           BUAT GROUP
+        ------------------------------------------------- */
+
+        const group =
+            d3.select(svg)
+                .append("g");
+
+
+        /* -------------------------------------------------
+           GAMBAR WILAYAH
+        ------------------------------------------------- */
+
+        /* -------------------------------------------------
+           SETIAP WILAYAH DIBUNGKUS DALAM <g> TERPISAH.
+           Ini membuat efek zoom tidak merusak posisi/hit-area
+           peta ketika mouse bergerak di atas wilayah.
+        ------------------------------------------------- */
+
+        const regionGroups =
+            group
+                .selectAll(".ntt-region-wrap")
+                .data(geojson.features)
+                .enter()
+                .append("g")
+                .attr("class", "ntt-region-wrap");
+
+        regionGroups
+            .append("path")
+            .attr("class", "ntt-region")
+            .attr("d", path)
+            .attr("fill", function (d) {
+
+                const nama =
+                    ambilNamaWilayah(d.properties);
+
+                const jumlah =
+                    cariJumlahPenerima(nama);
+
+                return warnaWilayah(jumlah);
+
+            })
+            .attr("stroke", "#ffffff")
+            .attr("stroke-width", 1.5);
+
+        /* -------------------------------------------
+           HOVER = HIGHLIGHT + ZOOM RINGAN + POPUP
+           Event dipasang pada group, bukan path yang
+           sedang diperbesar. Ini mencegah mouseleave
+           palsu saat animasi zoom berlangsung.
+        ------------------------------------------- */
+
+        regionGroups
+            .on("mouseenter", function (event, d) {
+
+                const nama = ambilNamaWilayah(d.properties);
+                const jumlah = cariJumlahPenerima(nama);
+                const regionGroup = d3.select(this);
+                const regionPath = regionGroup.select(".ntt-region");
+                const center = path.centroid(d);
+
+                regionGroup.raise();
+
+                regionGroup
+                    .interrupt()
+                    .transition()
+                    .duration(160)
+                    .attr(
+                        "transform",
+                        `translate(${center[0]} ${center[1]}) scale(1.035) translate(${-center[0]} ${-center[1]})`
+                    );
+
+                regionPath
+                    .interrupt()
+                    .transition()
+                    .duration(160)
+                    .attr("stroke", "#005baa")
+                    .attr("stroke-width", 2.6);
+
+                // METODE 1: hover langsung menampilkan popup.
+                if (!wilayahTerpilih) {
+                    tampilkanPopup(nama, jumlah, this);
+                }
+            })
+
+            .on("click", function (event, d) {
+
+                event.stopPropagation();
+
+                const nama = ambilNamaWilayah(d.properties);
+                const jumlah = cariJumlahPenerima(nama);
+
+                // METODE 2: klik mengunci popup sampai ditutup.
+                wilayahTerpilih = this;
+                tampilkanPopup(nama, jumlah, this);
+            })
+
+            .on("mouseleave", function () {
+
+                const regionGroup = d3.select(this);
+                const regionPath = regionGroup.select(".ntt-region");
+
+                regionGroup
+                    .interrupt()
+                    .transition()
+                    .duration(140)
+                    .attr("transform", null);
+
+                regionPath
+                    .interrupt()
+                    .transition()
+                    .duration(140)
+                    .attr("stroke", "#ffffff")
+                    .attr("stroke-width", 1.5);
+
+                // Popup hover hilang saat mouse keluar. Popup hasil klik tetap.
+                if (wilayahTerpilih !== this && popup) {
+                    popup.style.display = "none";
+                }
+            });
+
+        // Klik area kosong pada peta menutup popup.
+        d3.select(svg).on("click", function (event) {
+            if (event.target === svg) {
+                tutupPopup();
+            }
+        });
+
+        // Tombol X menutup popup.
+        if (closePopup) {
+            closePopup.addEventListener("click", function (event) {
+                event.stopPropagation();
+                tutupPopup();
+            });
+        }
+
+        // Klik di dalam popup tidak dianggap sebagai area kosong.
+        if (popup) {
+            popup.addEventListener("click", function (event) {
+                event.stopPropagation();
+            });
+        }
+
+        /* Tidak ada label permanen.
+           Nama wilayah muncul hanya saat hover. */
+
+
+        /* -------------------------------------------------
+           SELESAI
+        ------------------------------------------------- */
+
+        if (loading) {
+
+            loading.style.display = "none";
+
+        }
+
+
+        console.log(
+            "✅ Peta NTT berhasil ditampilkan."
+        );
+
+
+    } catch (error) {
+
+        console.error(
+            "❌ Gagal memuat peta NTT:",
+            error
+        );
+
+
+        if (loading) {
+
+            loading.innerHTML =
+                "⚠️ Peta NTT gagal dimuat.";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   CARI DATA PENERIMA
+========================================================= */
+
+function cariJumlahPenerima(namaWilayah) {
+
+    /* -----------------------------------------------
+       Pencarian langsung
+    ----------------------------------------------- */
+
+    if (
+        dataPenerimaNTT[namaWilayah] !== undefined
+    ) {
+
+        return dataPenerimaNTT[namaWilayah];
+
+    }
+
+
+    /* -----------------------------------------------
+       Pencarian fleksibel
+    ----------------------------------------------- */
+
+    const nama =
+        namaWilayah
+            .toLowerCase()
+            .replace(
+                /^kabupaten\s+/i,
+                ""
+            )
+            .replace(
+                /^kab\.\s*/i,
+                ""
+            )
+            .trim();
+
+
+    for (
+        const key in dataPenerimaNTT
+    ) {
+
+        const keyBersih =
+            key
+                .toLowerCase()
+                .trim();
+
+
+        if (
+            keyBersih === nama
+        ) {
+
+            return dataPenerimaNTT[key];
+
+        }
+
+    }
+
+
+    /* -----------------------------------------------
+       Jika tidak ditemukan
+    ----------------------------------------------- */
+
+    return 50;
+
+}
+
+
+/* =========================================================
+   JALANKAN PETA
+========================================================= */
+
+loadPetaNTT();
+    </script>
+
+
+</body>
+
+</html>
