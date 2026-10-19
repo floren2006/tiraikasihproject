@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Bantuan | Tirai Kasih PLN UIW NTT</title>
+<style>
+:root{--blue:#0878c9;--blue-dark:#064f88;--blue-deep:#053b68;--blue-soft:#edf7ff;--yellow:#ffd100;--bg:#f4f7fb;--white:#fff;--text:#172638;--muted:#708095;--border:#e4ebf2;--green:#16845b;--green-bg:#e9f8f1;--orange:#b86a00;--orange-bg:#fff4df;--red:#c04444;--red-bg:#fff0f0;--shadow:0 8px 28px rgba(29,67,105,.07)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{text-decoration:none;color:inherit}.sidebar{position:fixed;inset:0 auto 0 0;width:254px;background:linear-gradient(180deg,#0878c9 0%,#075b9d 55%,#064779 100%);color:#fff;padding:22px 15px;display:flex;flex-direction:column;z-index:30;box-shadow:8px 0 28px rgba(0,67,123,.10)}.brand{display:flex;align-items:center;gap:12px;padding:2px 9px 24px;border-bottom:1px solid rgba(255,255,255,.18)}.brand-logo{width:47px;height:47px;display:grid;place-items:center;flex:none}.brand-logo img{width:100%;height:100%;object-fit:contain}.brand h2{font-size:15px;letter-spacing:.2px;font-weight:800}.brand span{display:block;margin-top:5px;font-size:10px;letter-spacing:1.7px;font-weight:700;color:#d6edff}.menu-label{font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.62);font-weight:800;margin:27px 12px 11px}.menu{display:grid;gap:5px}.menu-item{display:flex;align-items:center;gap:12px;padding:12px 13px;border-radius:11px;color:rgba(255,255,255,.83);font-size:12.5px;font-weight:600;transition:.18s}.menu-item svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.menu-item:hover{background:rgba(255,255,255,.11);color:#fff}.menu-item.active{color:#fff;background:rgba(255,255,255,.17);box-shadow:inset 3px 0 0 var(--yellow)}.sidebar-bottom{margin-top:auto;padding-top:15px;border-top:1px solid rgba(255,255,255,.17)}.sidebar-bottom .menu-item{color:#fff}.main{margin-left:254px;min-height:100vh}.topbar{height:77px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.top-left{display:flex;align-items:center;gap:12px}.crumb{display:flex;align-items:center;gap:9px}.crumb-current{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:11px;color:#fff;background:linear-gradient(135deg,#0878c9,#0563a8);font-size:12px;font-weight:800;box-shadow:0 5px 14px rgba(8,120,201,.14)}.crumb-current svg,.crumb-next svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.crumb-separator{color:#aab6c4;font-size:18px}.crumb-next{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid #dcecf8;background:#f0f8ff;color:#17639a;border-radius:11px;font-size:12px;font-weight:700}.user-area{display:flex;align-items:center;gap:12px}.notify{border:1px solid var(--border);width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:#fff;color:#5d7086;position:relative}.notify svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}.notify:after{content:"";position:absolute;width:6px;height:6px;background:#f4a62a;border:2px solid #fff;border-radius:50%;right:8px;top:7px}.user-avatar{width:39px;height:39px;display:grid;place-items:center;background:#e7f3ff;color:#0878c9;border-radius:12px;font-weight:800}.user-meta strong{display:block;font-size:12px}.user-meta span{display:block;color:var(--muted);font-size:10.5px;margin-top:4px}.mobile-toggle{display:none}.content{max-width:1600px;margin:0 auto;padding:31px 34px 46px}.simulation-alert{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;background:#fff9e6;border:1px solid #f5e2a6;border-radius:13px;color:#78530c;margin-bottom:26px}.alert-icon{width:25px;height:25px;border-radius:8px;background:#ffedb1;display:grid;place-items:center;flex:none;font-size:15px}.simulation-alert strong{font-size:11px;letter-spacing:.45px;display:block;margin-bottom:4px}.simulation-alert p{font-size:11.5px;line-height:1.55;color:#866a2b}.page-heading{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;margin-bottom:24px}.eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:800;color:var(--blue);margin-bottom:9px}.page-heading h1{font-size:27px;letter-spacing:-.8px;color:#15334e;font-weight:800}.page-heading p{color:var(--muted);font-size:12px;margin-top:8px;line-height:1.6}.heading-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:11px 15px;font-size:11.5px;font-weight:700;cursor:pointer;transition:.18s;white-space:nowrap}.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.btn-primary{background:linear-gradient(135deg,#0878c9,#0563a8);color:#fff;box-shadow:0 6px 14px rgba(8,120,201,.16)}.btn-primary:hover{transform:translateY(-1px);box-shadow:0 9px 18px rgba(8,120,201,.23)}.btn-secondary{background:#fff;color:#426079;border:1px solid var(--border)}.btn-secondary:hover{background:#f8fbff;border-color:#bedcf2}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:23px}.stat-card{background:#fff;border:1px solid var(--border);border-radius:15px;padding:18px 18px 16px;box-shadow:0 3px 12px rgba(32,72,112,.025);min-width:0}.stat-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.stat-label{font-size:10px;letter-spacing:.7px;color:#718299;font-weight:800}.stat-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#eaf5ff;color:#0878c9}.stat-icon svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.stat-value{font-size:28px;font-weight:800;letter-spacing:-1px;color:#193a57;margin-top:11px}.stat-foot{color:#8695a7;font-size:10px;margin-top:6px}.stat-foot b{font-weight:700;color:#57728b}.workspace{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.workspace-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:22px 23px 18px;border-bottom:1px solid #edf1f5}.workspace-head h2{font-size:15px;color:#1c3c58;font-weight:800}.workspace-head p{font-size:11px;color:#8190a1;margin-top:6px}.data-count{background:#edf7ff;color:#0a70b8;border:1px solid #d7eefe;border-radius:20px;padding:7px 11px;font-size:10.5px;font-weight:800;white-space:nowrap}.filters{padding:18px 22px;display:grid;grid-template-columns:minmax(220px,1.7fr) repeat(3,minmax(140px,1fr)) auto;gap:10px;border-bottom:1px solid #edf1f5}.field-control{position:relative}.field-control>svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:#91a0b1;fill:none;stroke-width:1.8;pointer-events:none}.control{width:100%;height:41px;border:1px solid #e1e8ef;border-radius:9px;background:#fff;color:#30475c;padding:0 12px;font-size:11px;outline:none;transition:.16s}.field-control .control{padding-left:37px}.control:focus{border-color:#75b9e8;box-shadow:0 0 0 3px rgba(8,120,201,.09)}select.control{cursor:pointer}.reset-btn{padding:0 12px;border:1px solid #e1e8ef;border-radius:9px;background:#fff;color:#557086;font-size:11px;font-weight:700;cursor:pointer}.reset-btn:hover{border-color:#a8cde9;color:var(--blue)}.table-wrap{overflow:auto;width:100%}table{border-collapse:collapse;width:100%;min-width:1040px;text-align:left}thead th{background:#f8fafc;color:#718195;padding:13px 14px;font-size:9px;letter-spacing:.75px;text-transform:uppercase;font-weight:800;border-bottom:1px solid #e9eff4;white-space:nowrap}thead th:first-child,tbody td:first-child{padding-left:23px}tbody td{padding:15px 14px;border-bottom:1px solid #eef2f6;font-size:11px;color:#4c6074;vertical-align:middle}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fbfdff}.person{display:flex;align-items:center;gap:10px;min-width:180px}.person-avatar{width:34px;height:34px;flex:none;border-radius:10px;background:linear-gradient(145deg,#e5f4ff,#cbe8fc);color:#0878c9;display:grid;place-items:center;font-size:11px;font-weight:800}.person strong{display:block;font-size:11px;color:#233f59;font-weight:800}.person small{display:block;color:#8a9aab;font-size:9.5px;margin-top:4px}.region{font-weight:700;color:#3e566c}.status{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:7px;font-size:9.5px;font-weight:800;white-space:nowrap}.status:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.s-proposed{color:#946400;background:#fff5d9}.s-verified{color:#2569a1;background:#e9f5ff}.s-ready{color:#7654b2;background:#f2edff}.s-live{color:#16845b;background:#e6f7ef}.s-notlive{color:#b86a00;background:#fff2df}.s-blocked{color:#c04444;background:#fff0f0}.note-cell{max-width:210px;line-height:1.5;color:#77879a}.actions{display:flex;gap:6px}.icon-btn{height:29px;width:29px;display:grid;place-items:center;border:1px solid #e3eaf1;background:#fff;color:#658096;border-radius:8px;cursor:pointer}.icon-btn:hover{color:#0878c9;border-color:#b9dcf4;background:#f5fbff}.icon-btn.delete:hover{color:#c04444;border-color:#f2c6c6;background:#fff5f5}.icon-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.empty-row{text-align:center!important;padding:38px!important;color:#8493a5!important}.table-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 22px;border-top:1px solid #edf1f5;color:#8391a2;font-size:10.5px}.pager{display:flex;gap:5px;align-items:center}.pager button{min-width:29px;height:29px;border:1px solid #e3eaf1;background:#fff;border-radius:8px;color:#60778c;font-size:10.5px;cursor:pointer}.pager button.active{background:#0878c9;border-color:#0878c9;color:#fff}.pager button:disabled{opacity:.4;cursor:not-allowed}.footer-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding:0 2px;color:#8795a6;font-size:10px}.footer-note span{display:flex;align-items:center;gap:7px}.footer-note svg{width:14px;height:14px;stroke:#6b9f79;fill:none;stroke-width:1.8}.modal-backdrop{position:fixed;inset:0;background:rgba(12,34,54,.52);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal-backdrop.open{display:flex}.modal{width:min(760px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:18px;box-shadow:0 25px 80px rgba(5,31,54,.25);animation:appear .18s ease}.modal-head{position:sticky;top:0;z-index:2;background:#fff;display:flex;justify-content:space-between;align-items:flex-start;padding:22px 24px;border-bottom:1px solid #edf1f5}.modal-head h2{font-size:17px;color:#1a3a55}.modal-head p{font-size:11px;color:#8190a1;margin-top:6px}.close-modal{height:31px;width:31px;border-radius:9px;border:1px solid #e3eaf1;background:#fff;font-size:21px;color:#6b7e91;cursor:pointer}.modal-body{padding:22px 24px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.form-field{display:grid;gap:7px;min-width:0}.form-field.full{grid-column:1/-1}.form-field label{font-size:10.5px;font-weight:800;color:#486076}.form-field label span{color:#c04444}.form-field .control{font-size:11.5px}.form-field textarea.control{height:82px;padding:11px 12px;resize:vertical}.form-help{font-size:9.5px;line-height:1.5;color:#8b99a8}.modal-warning{margin-top:17px;padding:11px 13px;border-radius:10px;background:#fff8e6;border:1px solid #f3e4b7;color:#856719;font-size:10px;line-height:1.55}.modal-actions{display:flex;justify-content:flex-end;gap:9px;padding:16px 24px 22px;border-top:1px solid #edf1f5}.toast{position:fixed;right:22px;bottom:22px;z-index:200;background:#173f5e;color:#fff;padding:13px 17px;border-radius:11px;box-shadow:0 12px 30px rgba(15,45,70,.2);font-size:11.5px;font-weight:700;display:none;max-width:min(360px,calc(100vw - 40px))}.toast.show{display:block;animation:appear .18s ease}.menu-overlay{display:none}
+@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1250px){.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.search-filter{grid-column:1/-1}.reset-btn{min-height:41px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.sidebar{transform:translateX(-105%);transition:transform .25s}.sidebar.open{transform:translateX(0)}.menu-overlay.open{display:block;position:fixed;inset:0;background:rgba(13,35,55,.4);z-index:25}.main{margin-left:0}.topbar{padding:0 20px;height:68px}.mobile-toggle{display:grid;place-items:center;width:36px;height:36px;background:#fff;border:1px solid var(--border);border-radius:10px;color:#557086;cursor:pointer}.mobile-toggle svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}.content{padding:24px 20px 36px}.user-meta{display:none}.page-heading{align-items:flex-start;flex-direction:column}.heading-actions{width:100%}.heading-actions .btn{flex:1}.crumb-current,.crumb-next{padding:9px 11px}.user-area{gap:8px}}
+@media(max-width:560px){.content{padding:18px 12px 28px}.topbar{padding:0 12px}.crumb{gap:5px}.crumb-current,.crumb-next{font-size:10px;padding:8px 9px;gap:5px}.crumb-current svg,.crumb-next svg{width:14px;height:14px}.crumb-separator{font-size:14px}.notify{width:34px;height:34px}.user-avatar{width:34px;height:34px}.simulation-alert{padding:11px}.page-heading h1{font-size:23px}.stats{gap:9px}.stat-card{padding:14px}.stat-value{font-size:24px}.stat-label{font-size:9px}.stat-foot{font-size:9px}.filters{padding:13px;grid-template-columns:1fr}.search-filter{grid-column:auto}.workspace-head{padding:17px 14px}.table-footer{padding:13px;align-items:flex-start;flex-direction:column}.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.modal-head,.modal-body{padding:18px}.modal-actions{padding:14px 18px}.footer-note{align-items:flex-start;flex-direction:column}}
+
+
+/* =====================================================
+   BREADCRUMB ELEGAN DAN KONSISTEN DENGAN DASHBOARD
+   Tirai Kasih (petir) > halaman aktif (ikon sesuai sidebar)
+===================================================== */
+.topbar .crumb {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    min-width: 0;
+    font-size: 14px;
+    color: #155e99;
+}
+.topbar .crumb-current,
+.topbar .crumb-next {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    white-space: nowrap;
+    line-height: 1;
+    transition: box-shadow .22s ease, background .22s ease, filter .22s ease;
+}
+.topbar .crumb-current {
+    z-index: 2;
+    padding: 0 30px 0 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 750;
+    letter-spacing: .12px;
+    background: linear-gradient(135deg, #087fd0 0%, #0066b3 65%, #00579f 100%);
+    border: 1px solid rgba(0, 80, 150, .14);
+    border-radius: 11px 0 0 11px;
+    clip-path: polygon(0 0, calc(100% - 17px) 0, 100% 50%, calc(100% - 17px) 100%, 0 100%);
+    box-shadow: 0 8px 22px rgba(0, 102, 179, .18), inset 0 1px 0 rgba(255,255,255,.13);
+}
+.topbar .crumb-next {
+    z-index: 1;
+    margin-left: -10px;
+    padding: 0 20px 0 29px;
+    color: #1767a5;
+    font-size: 14px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #f5faff 0%, #e6f2fc 100%);
+    border: 1px solid #d4e6f6;
+    border-left: 0;
+    border-radius: 0 11px 11px 0;
+    box-shadow: 0 5px 16px rgba(0, 90, 160, .075), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.topbar .crumb-current svg,
+.topbar .crumb-next svg {
+    display: block;
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.topbar .crumb-separator { display: none; }
+@media (max-width: 900px) {
+    .topbar .crumb-current,
+    .topbar .crumb-next {
+        min-height: 43px;
+        gap: 8px;
+        font-size: 12px;
+    }
+    .topbar .crumb-current { padding-right: 25px; }
+    .topbar .crumb-next { padding-right: 15px; padding-left: 24px; }
+    .topbar .crumb-current svg,
+    .topbar .crumb-next svg { width: 17px; height: 17px; flex-basis: 17px; }
+}
+@media (max-width: 560px) {
+    .topbar { padding-left: 14px; padding-right: 14px; }
+    .topbar .crumb-current,
+    .topbar .crumb-next { min-height: 39px; font-size: 11px; gap: 6px; }
+    .topbar .crumb-current { padding-left: 12px; padding-right: 21px; }
+    .topbar .crumb-next { padding-left: 20px; padding-right: 11px; }
+    .topbar .crumb-current svg,
+    .topbar .crumb-next svg { width: 15px; height: 15px; flex-basis: 15px; }
+}
+
+
+
+/* ==========================================================
+   THEME ALIGNMENT — mengikuti tampilan Dashboard TIRAI KASIH
+   Mempertahankan fungsi dan skema data halaman ini.
+========================================================== */
+:root {
+  --blue: #0066b3;
+  --blue-dark: #004b87;
+  --blue-deep: #003d70;
+  --blue-soft: #eaf5ff;
+  --yellow: #ffd100;
+  --bg: #f5f8fc;
+  --white: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5eaf0;
+  --green: #15803d;
+  --green-bg: #e9f8ef;
+  --orange: #b45309;
+  --orange-bg: #fff5df;
+  --red: #c04444;
+  --red-bg: #fff0f0;
+  --shadow: 0 8px 24px rgba(0, 54, 110, .06);
+}
+body { background: var(--bg); color: var(--text); }
+
+/* Sidebar: gradasi, jarak, dan menu aktif sama dengan Dashboard. */
+.sidebar {
+  width: 255px;
+  padding: 24px 16px;
+  background: linear-gradient(180deg, var(--blue) 0%, var(--blue-dark) 100%);
+  box-shadow: 5px 0 20px rgba(0, 60, 120, .08);
+}
+.brand { gap: 12px; padding: 0 8px 28px; border-bottom-color: rgba(255,255,255,.15); }
+.brand-logo { width: 48px; height: 48px; }
+.brand h2 { font-size: 16px; font-weight: 700; }
+.brand span { font-size: 12px; color: #e5f3ff; opacity: .85; }
+.menu-label {
+  margin: 28px 12px 10px;
+  color: #d8edff;
+  opacity: 1;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.menu { gap: 5px; }
+.menu-item {
+  color: rgba(255,255,255,.86);
+  gap: 13px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background .2s ease, color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.menu-item:hover { background: rgba(255,255,255,.13); color: #fff; }
+.menu-item.active {
+  background: #fff;
+  color: var(--blue);
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+.menu-item.active:hover { background: #fff; color: var(--blue-dark); transform: translateX(1px); }
+.sidebar-bottom { margin-top: auto; }
+.sidebar-bottom .menu-item { color: #fff; }
+
+/* Topbar dan breadcrumb mengikuti pola Dashboard. */
+.main { margin-left: 255px; }
+.topbar {
+  height: 76px;
+  padding: 0 35px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.top-left { min-width: 0; }
+.crumb { display: flex; align-items: center; gap: 0; min-width: 0; color: #155e99; }
+.crumb-current, .crumb-next {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 14px;
+  transition: box-shadow .2s ease, filter .2s ease;
+}
+.crumb-current {
+  z-index: 2;
+  padding: 0 30px 0 16px;
+  color: #fff;
+  font-weight: 750;
+  letter-spacing: .12px;
+  background: linear-gradient(135deg, #087fd0 0%, #0066b3 65%, #00579f 100%);
+  border: 1px solid rgba(0,80,150,.14);
+  border-radius: 11px 0 0 11px;
+  clip-path: polygon(0 0, calc(100% - 17px) 0, 100% 50%, calc(100% - 17px) 100%, 0 100%);
+  box-shadow: 0 7px 18px rgba(0,102,179,.17);
+}
+.crumb-next {
+  z-index: 1;
+  margin-left: -10px;
+  padding: 0 20px 0 29px;
+  color: #1767a5;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f4f9ff 0%, #e7f2fc 100%);
+  border: 1px solid #d4e6f6;
+  border-left: 0;
+  border-radius: 0 11px 11px 0;
+  box-shadow: 0 4px 12px rgba(0,90,160,.06);
+}
+.crumb-current svg, .crumb-next svg {
+  display: block; width: 19px; height: 19px; flex: 0 0 19px;
+  fill: none; stroke: currentColor; stroke-width: 1.9;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.crumb-separator { display: none; }
+.notify {
+  width: 38px; height: 38px; flex: 0 0 38px;
+  border: 0; border-radius: 10px;
+  background: var(--blue-soft); color: var(--blue);
+}
+.notify svg { width: 19px; height: 19px; }
+.notify::after { display: none; }
+.user-area { gap: 15px; }
+.user-meta { text-align: right; }
+.user-meta strong { font-size: 13px; color: var(--text); }
+.user-meta span { color: var(--muted); font-size: 11px; }
+.user-avatar {
+  width: 40px; height: 40px; flex: 0 0 40px;
+  border-radius: 50%; background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.user-avatar svg {
+  width: 20px; height: 20px; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Ritme halaman dan panel pemberitahuan dipadatkan seperti Dashboard. */
+.content { padding: 22px 35px 38px; }
+.simulation-alert {
+  position: relative;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 16px;
+  margin-bottom: 18px;
+  background: #fff8e6;
+  border: 1px solid #f3d98b;
+  border-left: 5px solid #f5b400;
+  border-radius: 13px;
+  color: #78530c;
+  box-shadow: 0 3px 10px rgba(145, 104, 0, .025);
+}
+.alert-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #f5b400; color: #fff; font-size: 17px;
+}
+.simulation-alert strong { color: #8a6100; font-size: 12px; margin-bottom: 3px; }
+.simulation-alert p { color: #756b52; font-size: 11.5px; line-height: 1.45; }
+.page-heading { gap: 18px; align-items: center; margin-bottom: 17px; }
+.eyebrow { color: #0075c9; font-size: 10px; letter-spacing: 1.5px; margin-bottom: 6px; }
+.page-heading h1 { color: #183b59; font-size: 28px; letter-spacing: -.7px; }
+.page-heading p { color: #6b7f95; font-size: 12px; margin-top: 6px; }
+.heading-actions { gap: 10px; }
+.btn { min-height: 42px; padding: 10px 16px; font-size: 12px; border-radius: 11px; }
+.btn-primary { background: linear-gradient(110deg, #0066b3 0%, #0878c9 100%); box-shadow: 0 7px 16px rgba(0,102,179,.16); }
+.btn-primary:hover { box-shadow: 0 10px 20px rgba(0,102,179,.22); }
+.btn-secondary { background: #fff; color: #355975; border-color: #dfe8f1; }
+.btn-secondary:hover { color: var(--blue); background: #f8fbff; border-color: #b9d9f1; }
+
+/* Kartu ringkasan memakai susunan horizontal seperti kartu KPI Dashboard. */
+.stats { gap: 18px; margin-bottom: 19px; }
+.stat-card {
+  display: grid;
+  grid-template-columns: 48px minmax(0,1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 14px;
+  align-content: center;
+  min-height: 112px;
+  padding: 17px 18px;
+  border: 1px solid #e8edf3;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,54,110,.06);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,54,110,.09); border-color: #d2e6f7; }
+.stat-top { display: contents; }
+.stat-label { grid-column: 2; grid-row: 1; align-self: end; font-size: 10px; letter-spacing: .65px; color: #6b7785; }
+.stat-icon {
+  grid-column: 1; grid-row: 1 / span 3; align-self: center;
+  width: 48px; height: 48px; border-radius: 12px;
+  background: #e8f4ff; color: var(--blue);
+}
+.stat-value { grid-column: 2; grid-row: 2; font-size: 27px; line-height: 1.12; letter-spacing: -.6px; color: #193a57; margin-top: 3px; }
+.stat-foot { grid-column: 2; grid-row: 3; margin-top: 4px; color: #718096; font-size: 10px; line-height: 1.35; }
+
+/* Panel tabel dan kontrol menjaga karakter kartu putih Dashboard. */
+.workspace {
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(15,57,99,.045);
+}
+.workspace-head { padding: 17px 22px 14px; }
+.workspace-head h2 { color: #183b59; font-size: 16px; }
+.workspace-head p { color: #718096; font-size: 11.5px; }
+.data-count { background: #eaf5ff; color: #0066b3; border-color: #d9ecfb; }
+.filters { padding: 13px 20px; gap: 10px; }
+.control {
+  height: 41px; border-color: #dfe8f1; color: #30475c;
+  border-radius: 10px; font-size: 11.5px;
+}
+.control:focus { border-color: #75b9e8; box-shadow: 0 0 0 3px rgba(0,102,179,.12); }
+.field-control > svg { stroke: #8297aa; }
+.reset-btn { border-color: #dfe8f1; color: #506b83; border-radius: 10px; }
+.reset-btn:disabled { opacity: .48; cursor: not-allowed; }
+thead th { position: sticky; top: 76px; z-index: 3; background: #f6f9fc; color: #637a91; border-bottom-color: #e5edf4; }
+tbody td { border-bottom-color: #edf1f5; color: #4d6276; }
+tbody tr:hover { background: #f5faff; }
+.person strong { color: #1e3e5a; }
+.person-avatar { background: linear-gradient(145deg,#e4f3ff,#c8e6fc); }
+.note-cell { color: #61778e; }
+.icon-btn { transition: background .16s ease, border-color .16s ease, color .16s ease, transform .16s ease; }
+.icon-btn:hover { transform: translateY(-1px); }
+.table-footer { padding: 13px 20px; color: #61788e; }
+.pager button:focus-visible, .btn:focus-visible, .icon-btn:focus-visible, .menu-item:focus-visible,
+.control:focus-visible, .reset-btn:focus-visible, .close-modal:focus-visible, .notify:focus-visible {
+  outline: 3px solid rgba(0,102,179,.35); outline-offset: 2px;
+}
+.footer-note { color: #647b90; }
+.modal { border: 1px solid #e4edf5; }
+.modal-warning { color: #785f22; }
+
+@media (min-width: 1101px) {
+  .filters { grid-template-columns: minmax(220px,1.7fr) repeat(3,minmax(140px,1fr)) auto; }
+}
+@media (max-width: 1100px) {
+  .content { padding: 22px 25px 34px; }
+  .stat-card { padding: 15px; column-gap: 11px; }
+  .filters { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .search-filter { grid-column: 1 / -1; }
+}
+@media (max-width: 850px) {
+  .sidebar { width: 254px; padding: 22px 15px; }
+  .main { margin-left: 0; }
+  .topbar { height: 68px; padding: 0 20px; }
+  .content { padding: 20px 20px 32px; }
+  .crumb-current, .crumb-next { min-height: 43px; gap: 8px; font-size: 12px; }
+  .crumb-current { padding-right: 25px; }
+  .crumb-next { padding-right: 15px; padding-left: 24px; }
+  .crumb-current svg, .crumb-next svg { width: 17px; height: 17px; flex-basis: 17px; }
+  .user-meta { display: none; }
+  thead th { top: 68px; }
+}
+@media (max-width: 560px) {
+  .topbar { padding: 0 12px; }
+  .content { padding: 16px 12px 26px; }
+  .crumb-current, .crumb-next { min-height: 39px; font-size: 11px; gap: 6px; }
+  .crumb-current { padding-left: 12px; padding-right: 21px; }
+  .crumb-next { padding-left: 20px; padding-right: 11px; }
+  .crumb-current svg, .crumb-next svg { width: 15px; height: 15px; flex-basis: 15px; }
+  .simulation-alert { padding: 10px 11px; gap: 9px; margin-bottom: 15px; }
+  .simulation-alert p { font-size: 10.5px; }
+  .page-heading h1 { font-size: 24px; }
+  .stats { gap: 10px; }
+  .stat-card { grid-template-columns: 40px minmax(0,1fr); column-gap: 10px; padding: 13px; min-height: 100px; }
+  .stat-icon { width: 40px; height: 40px; }
+  .stat-label { font-size: 9px; letter-spacing: .25px; }
+  .stat-value { font-size: 24px; }
+  .stat-foot { font-size: 9px; }
+  .filters { grid-template-columns: 1fr; padding: 12px; }
+  .search-filter { grid-column: auto; }
+  .workspace-head { padding: 15px 14px 13px; }
+  .table-footer { padding: 12px 14px; }
+  .user-area { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+</style>
+</head>
+<body>
+<div class="menu-overlay" id="menuOverlay"></div>
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="brand-logo"><img src="image/LogoPLN.png" alt="Logo PLN" onerror="this.style.display='none';this.parentElement.innerHTML='<strong style=&quot;color:#ffd100;font-size:27px&quot;>ϟ</strong>'"></div><div><h2>PLN UIW NTT</h2><span>TIRAI KASIH</span></div></div>
+  <div class="menu-label">MENU UTAMA</div>
+  <nav class="menu">
+    <a href="Dashboard_TiraiKasih.html" class="menu-item"><svg viewBox="0 0 24 24"><path d="M3 10.8 12 3l9 7.8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg><span>Dashboard</span></a>
+    <a href="Data_Bantuan_TiraiKasih.html" class="menu-item active"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg><span>Data Bantuan</span></a>
+    <a href="#tambah-data" class="menu-item" id="menuAdd"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span>Tambah Data</span></a>
+    <a href="Dashboard_TiraiKasih.html#rekapitulasi" class="menu-item"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16V6"/></svg><span>Rekapitulasi</span></a>
+    <a href="Dashboard_TiraiKasih.html#peta" class="menu-item"><svg viewBox="0 0 24 24"><path d="m4 6 5-3 6 3 5-3v15l-5 3-6-3-5 3V6Z"/><path d="M9 3v15M15 6v15"/></svg><span>Peta Sebaran</span></a>
+  </nav>
+  <div class="menu-label">ADMINISTRASI</div>
+  <nav class="menu"><a href="#manajemen-user" class="menu-item" id="menuUser"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"/></svg><span>Manajemen User</span></a></nav>
+  <div class="sidebar-bottom"><a href="Login.html" class="menu-item"><svg viewBox="0 0 24 24"><path d="M10 5H5v14h5M13 8l4 4-4 4M8 12h9"/></svg><span>Keluar</span></a></div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="top-left"><button class="mobile-toggle" id="mobileToggle" aria-label="Buka menu"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="crumb" aria-label="Lokasi halaman"><span class="crumb-current"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2.5 5.8 13h5.4l-.7 8.5L18.2 10h-5.3l.6-7.5Z"/></svg>Tirai Kasih</span><span class="crumb-separator">›</span><span class="crumb-next" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg>Data Bantuan</span></div></div>
+    <div class="user-area"><button class="notify" type="button" aria-label="Notifikasi" title="Notifikasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></button><div class="user-meta"><strong>Administrator</strong><span>Admin PLN UIW NTT</span></div><div class="user-avatar" title="Administrator" aria-label="Administrator"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-3.3 3.1-5 7-5s6.2 1.7 7 5"/></svg></div></div>
+  </header>
+  <div class="content">
+    <div class="simulation-alert"><div class="alert-icon">!</div><div><strong>DATA SIMULASI — BUKAN PENERIMA AKTUAL</strong><p>Data yang ditampilkan digunakan untuk pengujian prototype sistem TIRAI KASIH. Jangan masukkan NIK atau data pribadi pelanggan yang sebenarnya.</p></div></div>
+    <div class="page-heading"><div><div class="eyebrow">PENGELOLAAN PROGRAM</div><h1>Data Bantuan</h1><p>Kelola daftar penerima bantuan meteran gratis dan pantau tahapan penanganannya.</p></div><div class="heading-actions"><button class="btn btn-secondary" id="exportBtn"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 18v3h14v-3"/></svg>Unduh CSV</button><button class="btn btn-primary" id="addBtn"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Tambah Penerima</button></div></div>
+    <section class="stats" aria-label="Ringkasan data">
+      <div class="stat-card"><div class="stat-top"><span class="stat-label">TOTAL DATA SIMULASI</span><span class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c.5-3 2.5-5 6-5s5.5 2 6 5M16 5a3 3 0 0 1 0 6M18 15c1.8.7 2.8 2.3 3 5"/></svg></span></div><div class="stat-value" id="totalCount">6</div><div class="stat-foot">Seluruh data uji tersimpan di browser</div></div>
+      <div class="stat-card"><div class="stat-top"><span class="stat-label">PERLU VERIFIKASI</span><span class="stat-icon" style="background:#fff5df;color:#b77900"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div><div class="stat-value" id="verificationCount">2</div><div class="stat-foot">Tahap diusulkan atau diverifikasi</div></div>
+      <div class="stat-card"><div class="stat-top"><span class="stat-label">SIAP PASANG</span><span class="stat-icon" style="background:#f2edff;color:#7654b2"><svg viewBox="0 0 24 24"><path d="m13 2-3 8h7l-6 12 1-9H6l7-11Z"/></svg></span></div><div class="stat-value" id="readyCount">1</div><div class="stat-foot">Menunggu proses penyalaan</div></div>
+      <div class="stat-card"><div class="stat-top"><span class="stat-label">SUDAH NYALA</span><span class="stat-icon" style="background:#e6f7ef;color:#16845b"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg></span></div><div class="stat-value" id="liveCount">2</div><div class="stat-foot">Status penyalaan selesai</div></div>
+    </section>
+    <section class="workspace">
+      <div class="workspace-head"><div><h2>Daftar Penerima Bantuan</h2><p>Gunakan pencarian dan filter untuk menemukan data simulasi.</p></div><span class="data-count" id="resultBadge">6 data</span></div>
+      <div class="filters">
+        <div class="field-control search-filter"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input class="control" type="search" id="searchInput" placeholder="Cari nama, alamat, kode NIK dummy..." aria-label="Cari penerima"></div>
+        <select class="control" id="regionFilter" aria-label="Filter kabupaten/kota"><option value="">Semua kabupaten/kota</option></select>
+        <select class="control" id="stageFilter" aria-label="Filter tahapan"><option value="">Semua tahapan bantuan</option><option>Diusulkan</option><option>Diverifikasi</option><option>Siap Pasang</option><option>Sudah Nyala</option><option>Terkendala</option></select>
+        <select class="control" id="liveFilter" aria-label="Filter status penyalaan"><option value="">Semua status nyala</option><option>Belum Nyala</option><option>Sudah Nyala</option></select>
+        <button class="reset-btn" id="resetBtn">Reset filter</button>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>No.</th><th>Nama Penerima</th><th>Kabupaten/Kota</th><th>Tahap Bantuan</th><th>Status Penyalaan</th><th>Catatan</th><th>Aksi</th></tr></thead><tbody id="tableBody"></tbody></table></div>
+      <div class="table-footer"><span id="tableSummary">Menampilkan 1–6 dari 6 data</span><div class="pager"><button id="prevBtn" aria-label="Halaman sebelumnya">‹</button><button class="active" id="pageBtn">1</button><button id="nextBtn" aria-label="Halaman berikutnya">›</button></div></div>
+    </section>
+    <div class="footer-note"><span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg>Prototype tampilan admin • Data tidak dikirim ke server</span><span>PLN UIW NTT · Tirai Kasih</span></div>
+  </div>
+</main>
+<div class="modal-backdrop" id="formModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal"><div class="modal-head"><div><h2 id="modalTitle">Tambah Penerima Bantuan</h2><p>Lengkapi informasi penerima menggunakan data uji.</p></div><button class="close-modal" id="closeModal" aria-label="Tutup">×</button></div>
+    <form id="beneficiaryForm"><div class="modal-body"><div class="form-grid">
+      <div class="form-field"><label for="nameInput">Nama penerima <span>*</span></label><input class="control" id="nameInput" required maxlength="100" placeholder="Contoh: Penerima Uji 07"></div>
+      <div class="form-field"><label for="nikInput">NIK dummy <span>*</span></label><input class="control" id="nikInput" required maxlength="30" placeholder="Contoh: NIK-TEST-007"><div class="form-help">Gunakan kode simulasi, jangan gunakan NIK asli.</div></div>
+      <div class="form-field"><label for="addressInput">Alamat simulasi <span>*</span></label><input class="control" id="addressInput" required maxlength="180" placeholder="Contoh: Rumah Uji 07, Desa Simulasi G"></div>
+      <div class="form-field"><label for="regionInput">Kabupaten/Kota <span>*</span></label><select class="control" id="regionInput" required></select></div>
+      <div class="form-field"><label for="stageInput">Tahap bantuan <span>*</span></label><select class="control" id="stageInput" required><option value="Diusulkan">Diusulkan</option><option value="Diverifikasi">Diverifikasi</option><option value="Siap Pasang">Siap Pasang</option><option value="Sudah Nyala">Sudah Nyala</option><option value="Terkendala">Terkendala</option></select></div>
+      <div class="form-field"><label for="liveInput">Status penyalaan <span>*</span></label><select class="control" id="liveInput" required><option value="Belum Nyala">Belum Nyala</option><option value="Sudah Nyala">Sudah Nyala</option></select></div>
+      <div class="form-field full"><label for="notesInput">Catatan tindak lanjut</label><textarea class="control" id="notesInput" maxlength="300" placeholder="Contoh: Menunggu proses verifikasi. Maksimal 300 karakter."></textarea></div>
+    </div><div class="modal-warning"><strong>Catatan prototype:</strong> data baru hanya disimpan pada penyimpanan lokal browser ini (localStorage), bukan ke database kantor PLN. Fitur ini belum cocok untuk data pelanggan yang sebenarnya.</div></div>
+    <div class="modal-actions"><button type="button" class="btn btn-secondary" id="cancelBtn">Batal</button><button type="submit" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span id="saveBtnText">Simpan Data</span></button></div></form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{
+  const STORAGE_KEY='tiraiKasihDataBantuanV1';
+  const regions=['Alor','Belu','Ende','Flores Timur','Kupang','Lembata','Malaka','Manggarai','Manggarai Barat','Manggarai Timur','Nagekeo','Ngada','Rote Ndao','Sabu Raijua','Sikka','Sumba Barat','Sumba Barat Daya','Sumba Tengah','Sumba Timur','Timor Tengah Selatan','Timor Tengah Utara','Kota Kupang'];
+  const seed=[
+    {id:'demo-1',name:'Penerima Uji 01',nik:'NIK-TEST-001',address:'Rumah Uji 01, Desa Simulasi A',region:'Kota Kupang',stage:'Diusulkan',live:'Belum Nyala',notes:'Menunggu verifikasi'},
+    {id:'demo-2',name:'Penerima Uji 02',nik:'NIK-TEST-002',address:'Rumah Uji 02, Desa Simulasi B',region:'Kupang',stage:'Diverifikasi',live:'Belum Nyala',notes:'Menunggu persetujuan dan dana'},
+    {id:'demo-3',name:'Penerima Uji 03',nik:'NIK-TEST-003',address:'Rumah Uji 03, Desa Simulasi C',region:'Sumba Timur',stage:'Siap Pasang',live:'Belum Nyala',notes:'Persetujuan, dana, dan kesiapan teknis terpenuhi'},
+    {id:'demo-4',name:'Penerima Uji 04',nik:'NIK-TEST-004',address:'Rumah Uji 04, Desa Simulasi D',region:'Manggarai',stage:'Sudah Nyala',live:'Sudah Nyala',notes:'Bukti nyala lengkap'},
+    {id:'demo-5',name:'Penerima Uji 05',nik:'NIK-TEST-005',address:'Rumah Uji 05, Desa Simulasi E',region:'Ende',stage:'Terkendala',live:'Belum Nyala',notes:'Simulasi: perlu pemeriksaan lokasi'},
+    {id:'demo-6',name:'Penerima Uji 06',nik:'NIK-TEST-006',address:'Rumah Uji 06, Desa Simulasi F',region:'Belu',stage:'Sudah Nyala',live:'Sudah Nyala',notes:'Simulasi: dokumentasi selesai'}
+  ];
+  const $=id=>document.getElementById(id);
+  let data=[]; let editingId=null; let currentPage=1; const perPage=6; let toastTimer;
+  try { const stored=localStorage.getItem(STORAGE_KEY); data=stored?JSON.parse(stored):seed; if(!Array.isArray(data)) data=seed; } catch(e) { data=seed; }
+  const save=()=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data));}catch(e){showToast('Penyimpanan browser tidak tersedia. Data belum tersimpan permanen.');}};
+  const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  const initials=name=>String(name||'PU').split(/\s+/).filter(Boolean).slice(0,2).map(s=>s[0]).join('').toUpperCase();
+  const stageClass=s=>({'Diusulkan':'s-proposed','Diverifikasi':'s-verified','Siap Pasang':'s-ready','Sudah Nyala':'s-live','Terkendala':'s-blocked'}[s]||'s-verified');
+  const fillRegions=()=>{const opts=regions.map(r=>`<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join(''); $('regionFilter').insertAdjacentHTML('beforeend',opts); $('regionInput').innerHTML='<option value="">Pilih kabupaten/kota</option>'+opts;};
+  function showToast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800);}
+  function updateStats(){ $('totalCount').textContent=data.length; $('verificationCount').textContent=data.filter(x=>['Diusulkan','Diverifikasi'].includes(x.stage)).length; $('readyCount').textContent=data.filter(x=>x.stage==='Siap Pasang').length; $('liveCount').textContent=data.filter(x=>x.live==='Sudah Nyala').length; }
+  function filtered(){const q=$('searchInput').value.trim().toLowerCase(),r=$('regionFilter').value,s=$('stageFilter').value,l=$('liveFilter').value;return data.filter(x=>(!q||[x.name,x.nik,x.address,x.region,x.notes].some(v=>String(v||'').toLowerCase().includes(q)))&&(!r||x.region===r)&&(!s||x.stage===s)&&(!l||x.live===l)).sort((a,b)=>String(a.name).localeCompare(String(b.name),'id'));}
+  function render(){updateStats();const rows=filtered();const pages=Math.max(1,Math.ceil(rows.length/perPage));if(currentPage>pages)currentPage=pages;const start=(currentPage-1)*perPage;const current=rows.slice(start,start+perPage);$('resultBadge').textContent=`${rows.length} data`; $('tableSummary').textContent=rows.length?`Menampilkan ${start+1}–${Math.min(start+perPage,rows.length)} dari ${rows.length} data`:'Tidak ada data yang sesuai filter'; $('prevBtn').disabled=currentPage<=1;$('nextBtn').disabled=currentPage>=pages;$('pageBtn').textContent=currentPage;
+    if(!current.length){$('tableBody').innerHTML='<tr><td colspan="7" class="empty-row">Tidak ada data ditemukan. Coba ubah kata kunci atau reset filter.</td></tr>';return;}
+    $('tableBody').innerHTML=current.map((x,i)=>`<tr><td>${start+i+1}</td><td><div class="person"><div class="person-avatar">${escapeHtml(initials(x.name))}</div><div><strong>${escapeHtml(x.name)}</strong><small>${escapeHtml(x.nik)}</small></div></div></td><td><span class="region">${escapeHtml(x.region)}</span><div style="font-size:9.5px;color:#8b9aab;margin-top:4px;max-width:180px;line-height:1.45">${escapeHtml(x.address)}</div></td><td><span class="status ${stageClass(x.stage)}">${escapeHtml(x.stage)}</span></td><td><span class="status ${x.live==='Sudah Nyala'?'s-live':'s-notlive'}">${escapeHtml(x.live)}</span></td><td class="note-cell">${escapeHtml(x.notes||'—')}</td><td><div class="actions"><button class="icon-btn" data-edit="${escapeHtml(x.id)}" title="Edit data" aria-label="Edit ${escapeHtml(x.name)}"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/></svg></button><button class="icon-btn delete" data-delete="${escapeHtml(x.id)}" title="Hapus data" aria-label="Hapus ${escapeHtml(x.name)}"><svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 10v6M14 10v6"/></svg></button></div></td></tr>`).join('');
+  }
+  function openModal(id=null){editingId=id;const isEdit=Boolean(id);const x=isEdit?data.find(y=>y.id===id):null;$('modalTitle').textContent=isEdit?'Edit Data Penerima':'Tambah Penerima Bantuan';$('saveBtnText').textContent=isEdit?'Simpan Perubahan':'Simpan Data';$('nameInput').value=x?.name||'';$('nikInput').value=x?.nik||'';$('addressInput').value=x?.address||'';$('regionInput').value=x?.region||'';$('stageInput').value=x?.stage||'Diusulkan';$('liveInput').value=x?.live||'Belum Nyala';$('notesInput').value=x?.notes||'';$('formModal').classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>$('nameInput').focus(),50);}
+  function closeModal(){$('formModal').classList.remove('open');document.body.style.overflow='';editingId=null;}
+  $('addBtn').addEventListener('click',()=>openModal());$('menuAdd').addEventListener('click',e=>{e.preventDefault();openModal();});$('closeModal').addEventListener('click',closeModal);$('cancelBtn').addEventListener('click',closeModal);$('formModal').addEventListener('click',e=>{if(e.target===$('formModal'))closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();$('sidebar').classList.remove('open');$('menuOverlay').classList.remove('open');}});
+  $('beneficiaryForm').addEventListener('submit',e=>{e.preventDefault();const record={id:editingId||('local-'+Date.now()+'-'+Math.random().toString(36).slice(2,7)),name:$('nameInput').value.trim(),nik:$('nikInput').value.trim(),address:$('addressInput').value.trim(),region:$('regionInput').value,stage:$('stageInput').value,live:$('liveInput').value,notes:$('notesInput').value.trim()};if(!record.name||!record.nik||!record.address||!record.region){showToast('Lengkapi semua kolom yang wajib diisi.');return;}if(!/^NIK-TEST-/i.test(record.nik)){if(!confirm('Kode NIK belum menggunakan format NIK-TEST-. Tetap simpan sebagai data simulasi?'))return;}if(record.stage==='Sudah Nyala')record.live='Sudah Nyala';if(record.live==='Sudah Nyala'&&record.stage!=='Sudah Nyala')record.stage='Sudah Nyala';if(editingId){data=data.map(x=>x.id===editingId?record:x);showToast('Data simulasi berhasil diperbarui.');}else{data.push(record);showToast('Data simulasi berhasil ditambahkan.');}save();closeModal();currentPage=1;render();});
+  $('tableBody').addEventListener('click',e=>{const edit=e.target.closest('[data-edit]'),del=e.target.closest('[data-delete]');if(edit)openModal(edit.dataset.edit);if(del){const item=data.find(x=>x.id===del.dataset.delete);if(item&&confirm(`Hapus data simulasi ${item.name}?`)){data=data.filter(x=>x.id!==item.id);save();render();showToast('Data simulasi dihapus.');}}});
+  ['searchInput','regionFilter','stageFilter','liveFilter'].forEach(id=>$(id).addEventListener(id==='searchInput'?'input':'change',()=>{currentPage=1;render();}));$('resetBtn').addEventListener('click',()=>{$('searchInput').value='';$('regionFilter').value='';$('stageFilter').value='';$('liveFilter').value='';currentPage=1;render();});$('prevBtn').addEventListener('click',()=>{currentPage=Math.max(1,currentPage-1);render();});$('nextBtn').addEventListener('click',()=>{const pages=Math.max(1,Math.ceil(filtered().length/perPage));currentPage=Math.min(pages,currentPage+1);render();});
+  $('exportBtn').addEventListener('click',()=>{const rows=filtered();if(!rows.length){showToast('Tidak ada data untuk diunduh.');return;}const headers=['Nama Penerima','NIK Dummy','Alamat Simulasi','Kabupaten/Kota','Tahap Bantuan','Status Penyalaan','Catatan'];const quote=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const csv='\uFEFF'+[headers,...rows.map(x=>[x.name,x.nik,x.address,x.region,x.stage,x.live,x.notes])].map(row=>row.map(quote).join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='Data_Bantuan_TiraiKasih_Simulasi.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);showToast('File CSV berhasil disiapkan.');});
+  $('mobileToggle').addEventListener('click',()=>{$('sidebar').classList.toggle('open');$('menuOverlay').classList.toggle('open');});$('menuOverlay').addEventListener('click',()=>{$('sidebar').classList.remove('open');$('menuOverlay').classList.remove('open');});$('menuUser').addEventListener('click',e=>{e.preventDefault();showToast('Halaman Manajemen User akan dibuat pada tahap berikutnya.');});
+  fillRegions();render();
+  if(window.location.hash==='#tambah-data'){setTimeout(()=>openModal(),120);}
+})();
+</script>
+</body>
+</html>
